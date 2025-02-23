@@ -219,7 +219,7 @@ a = Vector2(641, 259)
 b = Vector2(647, 259)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02gmo"]
-size = Vector2(5.45455, 5.45455)
+size = Vector2(11.3636, 10.9091)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7c82"]
 atlas = ExtResource("9_sqo4e")
@@ -269,7 +269,7 @@ position = Vector2(569, 480)
 texture = ExtResource("6_yoxsl")
 
 [node name="Mine" type="Sprite2D" parent="Room"]
-position = Vector2(123, 247)
+position = Vector2(121, 247)
 rotation = 1.5708
 texture = ExtResource("7_u3voh")
 
@@ -463,13 +463,17 @@ position = Vector2(113, 185)
 script = ExtResource("1_yft62")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0.5, 5)
 scale = Vector2(2.2, 2.2)
 shape = SubResource("RectangleShape2D_02gmo")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(0.0628977, 0.0628977)
+position = Vector2(1, 5.46378)
+scale = Vector2(0.132162, 0.125362)
 texture = SubResource("AtlasTexture_p7c82")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(12, 9)
+position = Vector2(3, 2)
+zoom = Vector2(9, 8)
 position_smoothing_enabled = true
+position_smoothing_speed = 3.0
