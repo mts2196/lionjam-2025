@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d05wrrfpl0b5g"]
+[gd_scene load_steps=14 format=3 uid="uid://d05wrrfpl0b5g"]
 
 [ext_resource type="Texture2D" uid="uid://dllo67g7tjkg7" path="res://background/Bunk.png" id="1_wt5oo"]
 [ext_resource type="Script" path="res://player.gd" id="1_yft62"]
@@ -8,13 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://ci7lqmg75t4ua" path="res://background/Map.png" id="5_x1x5n"]
 [ext_resource type="Texture2D" uid="uid://cp10mmfsmagt4" path="res://background/Med.png" id="6_yoxsl"]
 [ext_resource type="Texture2D" uid="uid://d1pm8iq2bqclo" path="res://background/Mine.png" id="7_u3voh"]
+[ext_resource type="Script" path="res://terminal.gd" id="8_kww22"]
+[ext_resource type="Texture2D" uid="uid://bgc7o0craxnpt" path="res://background/Sprites.png" id="9_sqo4e"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_sxnlf"]
-a = Vector2(150, 179)
-b = Vector2(8, 179)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu2jc"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tur5a"]
-distance = -254.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02gmo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7c82"]
+atlas = ExtResource("9_sqo4e")
+region = Rect2(993, 369, 197, 200)
 
 [node name="Main" type="Node2D"]
 
@@ -61,22 +64,38 @@ position = Vector2(79, 258)
 rotation = 1.5708
 texture = ExtResource("7_u3voh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room"]
-shape = SubResource("SegmentShape2D_sxnlf")
+[node name="Terminal" type="Area2D" parent="Room"]
+position = Vector2(100, 150)
+script = ExtResource("8_kww22")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Room"]
+[node name="ColorRect" type="ColorRect" parent="Room/Terminal"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Room"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Terminal"]
+shape = SubResource("RectangleShape2D_lu2jc")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Room"]
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Room"]
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Room"]
+[node name="Label" type="Label" parent="Room/Terminal"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(50, 50)
 script = ExtResource("1_yft62")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(545, 339)
-shape = SubResource("WorldBoundaryShape2D_tur5a")
+scale = Vector2(2.2, 2.2)
+shape = SubResource("RectangleShape2D_02gmo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.218274, 0.218274)
+texture = SubResource("AtlasTexture_p7c82")
