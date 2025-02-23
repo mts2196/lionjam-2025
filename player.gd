@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+<<<<<<< HEAD
 @export var speed: float = 100.0  # Slower speed
 
 # Movement direction
@@ -17,6 +18,10 @@ func _ready():
 	right_walls = get_tree().get_nodes_in_group("right_walls")
 	top_walls = get_tree().get_nodes_in_group("top_walls")
 	bottom_walls = get_tree().get_nodes_in_group("bottom_walls")
+=======
+@export var speed: float = 200.0
+var nearby_terminal: Area2D = null  # Track the nearest terminal
+>>>>>>> c9446906f4905061d3c98f7317989e5de163893a
 
 func _physics_process(delta):
 	# Reset the movement direction
@@ -32,10 +37,14 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1
 
+<<<<<<< HEAD
 	# Normalize direction for consistent speed
 	direction = direction.normalized()
 	velocity = direction * speed
 
 
 	# Move the character
+=======
+	velocity = direction.normalized() * speed
+>>>>>>> c9446906f4905061d3c98f7317989e5de163893a
 	move_and_slide()
