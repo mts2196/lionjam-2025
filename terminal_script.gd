@@ -7,6 +7,8 @@ const API_KEY = "AIzaSyDPhO-kP9tbt6ZnY9NuMU93Ms0tzta6Je0"
 @onready var input_field = $MainLayout/TerminalContainer/InputField
 @onready var http_request = $MainLayout/TerminalContainer/HTTPRequest
 
+signal closed
+
 # AI Definitions
 var ais = {
 	"hydroponics": { "name": "Hydroponics", "color": "red", "system_prompt": "You are Hydroponics, in charge of plant growth. Keep responses to 1–2 sentences.", "connected": true },
@@ -18,6 +20,9 @@ var ais = {
 var selected_ai = "all"  # Default to Broadcast mode
 
 func _ready():
+	if InputMap.has_action("ui_cancel"):  # If ESC is mapped, close the UI
+		InputMap.action_add_event("ui_cancel", InputEventKey.new())
+
 	text_history.text = "Welcome to the Terminal.\nType a command and press Enter.\n\n"
 	text_history.scroll_following = true
 	text_history.mouse_filter = Control.MouseFilter.MOUSE_FILTER_IGNORE
@@ -27,6 +32,14 @@ func _ready():
 		http_request.request_completed.connect(_on_HTTPRequest_request_completed)
 
 	await type_out_text("\n[color=lime]>[/color] Now in [color=yellow]BROADCAST[/color] mode. All AIs will respond.\n")
+
+func _process(_delta):
+	if Input.is_action_just_pressed("ui_cancel"):  # Press ESC to close
+		close_terminal()
+
+func close_terminal():
+	emit_signal("closed")  # Notify the terminal it's closed
+	queue_free()  # Remove UI from scene
 
 #
 # BUTTON HANDLERS (Signals set in the Editor)
