@@ -43,7 +43,7 @@ shader_parameter/chromatic_aberration_strength = 1.0
 shader_parameter/wiggle = 0.002
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_lyucf")
 
-[node name="TerminalRoot" type="Control"]
+[node name="MainScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,36 +52,67 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fyi53")
 
-[node name="TextHistory" type="RichTextLabel" parent="."]
+[node name="MainLayout" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 543.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AIMenu" type="VBoxContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(75, 50)
+layout_mode = 2
+
+[node name="HydroponicsButton" type="Button" parent="MainLayout/AIMenu"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "Hydroponics"
+
+[node name="SecurityButton" type="Button" parent="MainLayout/AIMenu"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "Security"
+
+[node name="MaintenanceButton" type="Button" parent="MainLayout/AIMenu"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "Maintenance"
+
+[node name="HARTButton" type="Button" parent="MainLayout/AIMenu"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "HART"
+
+[node name="BroadcastButton" type="Button" parent="MainLayout/AIMenu"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "ALL"
+
+[node name="TerminalContainer" type="VBoxContainer" parent="MainLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextHistory" type="RichTextLabel" parent="MainLayout/TerminalContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 mouse_filter = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_e7c18")
 theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
 text = "asdfasdfasdfasdfasdfasdfasdfasdfasd"
 
-[node name="InputField" type="LineEdit" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -91.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="InputField" type="LineEdit" parent="MainLayout/TerminalContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1nfbg")
 theme_override_font_sizes/font_size = 38
 placeholder_text = "fasdfasdfasdfa"
 
-[node name="dithering" type="CanvasLayer" parent="."]
+[node name="dithering" type="CanvasLayer" parent="MainLayout/TerminalContainer"]
 layer = 99
 visible = false
 
-[node name="dither" type="ColorRect" parent="dithering"]
+[node name="dither" type="ColorRect" parent="MainLayout/TerminalContainer/dithering"]
 material = SubResource("ShaderMaterial_035lj")
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,11 +122,11 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CRT" type="CanvasLayer" parent="."]
+[node name="CRT" type="CanvasLayer" parent="MainLayout/TerminalContainer"]
 layer = 102
 visible = false
 
-[node name="crt_shader" type="ColorRect" parent="CRT"]
+[node name="crt_shader" type="ColorRect" parent="MainLayout/TerminalContainer/CRT"]
 material = SubResource("ShaderMaterial_r0vad")
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,7 +136,12 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[node name="HTTPRequest" type="HTTPRequest" parent="MainLayout/TerminalContainer"]
 
-[connection signal="text_submitted" from="InputField" to="." method="_on_input_field_text_submitted"]
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="MainLayout/AIMenu/HydroponicsButton" to="." method="_on_HydroponicsButton_pressed"]
+[connection signal="pressed" from="MainLayout/AIMenu/SecurityButton" to="." method="_on_SecurityButton_pressed"]
+[connection signal="pressed" from="MainLayout/AIMenu/MaintenanceButton" to="." method="_on_MaintenanceButton_pressed"]
+[connection signal="pressed" from="MainLayout/AIMenu/HARTButton" to="." method="_on_HARTButton_pressed"]
+[connection signal="pressed" from="MainLayout/AIMenu/BroadcastButton" to="." method="_on_BroadcastButton_pressed"]
+[connection signal="text_submitted" from="MainLayout/TerminalContainer/InputField" to="." method="_on_input_field_text_submitted"]
+[connection signal="request_completed" from="MainLayout/TerminalContainer/HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

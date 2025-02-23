@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d05wrrfpl0b5g"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_yft62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfons"]
+size = Vector2(32, 32)
+
+[node name="Main" type="Node2D"]
+
+[node name="Room" type="Node2D" parent="."]
+
+[node name="Background" type="ColorRect" parent="Room"]
+custom_minimum_size = Vector2(1024, 768)
+offset_right = 1024.0
+offset_bottom = 768.0
+color = Color(0.544974, 0.544974, 0.544974, 1)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_yft62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(36, 38)
+shape = SubResource("RectangleShape2D_tfons")

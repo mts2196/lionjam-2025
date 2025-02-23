@@ -1,0 +1,149 @@
+[gd_scene load_steps=10 format=3 uid="uid://chdvhwutlyvfm"]
+
+[ext_resource type="Script" path="res://terminal_script.gd" id="1_fyi53"]
+[ext_resource type="FontFile" uid="uid://bkekt7a4qgto0" path="res://fonts/VT323-Regular.ttf" id="2_1nfbg"]
+[ext_resource type="Shader" path="res://addons/flowerwall_postprocess/shaders/dithering.gdshader" id="3_drx60"]
+[ext_resource type="Shader" path="res://addons/flowerwall_postprocess/shaders/crt.gdshader" id="5_nje87"]
+
+[sub_resource type="FontVariation" id="FontVariation_e7c18"]
+base_font = ExtResource("2_1nfbg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_035lj"]
+shader = ExtResource("3_drx60")
+shader_parameter/color_depth = 8
+shader_parameter/dithering = false
+shader_parameter/resolution_scale = 1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mineq"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lyucf"]
+width = 2048
+height = 2048
+noise = SubResource("FastNoiseLite_mineq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r0vad"]
+shader = ExtResource("5_nje87")
+shader_parameter/enable_grain = true
+shader_parameter/enable_curving = false
+shader_parameter/enable_scanlines = true
+shader_parameter/enable_chromatic_aberration = true
+shader_parameter/enable_rgb_grid = true
+shader_parameter/enable_vhs_wiggle = true
+shader_parameter/enable_vignette = false
+shader_parameter/brightness_multiplier = 1.05
+shader_parameter/grain_strength = 0.25
+shader_parameter/curve_power = 1.02
+shader_parameter/vignette_size = 0.4
+shader_parameter/vignette_smoothness = 0.4
+shader_parameter/scanlines_interval = 6.0
+shader_parameter/scanline_opacity = 0.45
+shader_parameter/scanline_thickness = 3.0
+shader_parameter/chromatic_aberration_strength = 1.0
+shader_parameter/wiggle = 0.002
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_lyucf")
+
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fyi53")
+
+[node name="MainLayout" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AIMenu" type="VBoxContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(75, 50)
+layout_mode = 2
+
+[node name="HydroponicsButton" type="Button" parent="MainLayout/AIMenu"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "Hydroponics"
+
+[node name="SecurityButton" type="Button" parent="MainLayout/AIMenu"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "Security"
+
+[node name="MaintenanceButton" type="Button" parent="MainLayout/AIMenu"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "Maintenance"
+
+[node name="HARTButton" type="Button" parent="MainLayout/AIMenu"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "HART"
+
+[node name="BroadcastButton" type="Button" parent="MainLayout/AIMenu"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+text = "ALL"
+
+[node name="TerminalContainer" type="VBoxContainer" parent="MainLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextHistory" type="RichTextLabel" parent="MainLayout/TerminalContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_e7c18")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "asdfasdfasdfasdfasdfasdfasdfasdfasd"
+
+[node name="InputField" type="LineEdit" parent="MainLayout/TerminalContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1nfbg")
+theme_override_font_sizes/font_size = 38
+placeholder_text = "fasdfasdfasdfa"
+
+[node name="dithering" type="CanvasLayer" parent="MainLayout/TerminalContainer"]
+layer = 99
+visible = false
+
+[node name="dither" type="ColorRect" parent="MainLayout/TerminalContainer/dithering"]
+material = SubResource("ShaderMaterial_035lj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CRT" type="CanvasLayer" parent="MainLayout/TerminalContainer"]
+layer = 102
+visible = false
+
+[node name="crt_shader" type="ColorRect" parent="MainLayout/TerminalContainer/CRT"]
+material = SubResource("ShaderMaterial_r0vad")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="MainLayout/TerminalContainer"]
+
+[node name="AIButtons" type="Node" parent="."]
+
+[connection signal="pressed" from="MainLayout/AIMenu/HydroponicsButton" to="." method="_on_HydroponicsButton_pressed"]
+[connection signal="pressed" from="MainLayout/AIMenu/SecurityButton" to="." method="_on_SecurityButton_pressed"]
+[connection signal="pressed" from="MainLayout/AIMenu/MaintenanceButton" to="." method="_on_MaintenanceButton_pressed"]
+[connection signal="pressed" from="MainLayout/AIMenu/HARTButton" to="." method="_on_HARTButton_pressed"]
+[connection signal="pressed" from="MainLayout/AIMenu/BroadcastButton" to="." method="_on_BroadcastButton_pressed"]
+[connection signal="text_submitted" from="MainLayout/TerminalContainer/InputField" to="." method="_on_input_field_text_submitted"]
+[connection signal="request_completed" from="MainLayout/TerminalContainer/HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

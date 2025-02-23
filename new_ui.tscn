@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddcclmrkesjoh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccvj4"]
+bg_color = Color(0, 0.658824, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 76.0
+offset_bottom = 23.0
+
+[node name="AgentsMenu" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="ToolAgent" type="HBoxContainer" parent="HBoxContainer/AgentsMenu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/AgentsMenu/ToolAgent"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "TOOLS"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Light" type="Panel" parent="HBoxContainer/AgentsMenu/ToolAgent"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ccvj4")
+
+[node name="Button" type="Button" parent="HBoxContainer/AgentsMenu/ToolAgent"]
+layout_mode = 2
+
+[node name="HydroponicsAgent" type="HBoxContainer" parent="HBoxContainer/AgentsMenu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/AgentsMenu/HydroponicsAgent"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "HYDROPONICS"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Light" type="Panel" parent="HBoxContainer/AgentsMenu/HydroponicsAgent"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ccvj4")
+
+[node name="SecurityAgent" type="HBoxContainer" parent="HBoxContainer/AgentsMenu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/AgentsMenu/SecurityAgent"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "SECURITY"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Light" type="Panel" parent="HBoxContainer/AgentsMenu/SecurityAgent"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ccvj4")
+
+[node name="MaintenanceAgent" type="HBoxContainer" parent="HBoxContainer/AgentsMenu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/AgentsMenu/MaintenanceAgent"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "MAINTENANCE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Light" type="Panel" parent="HBoxContainer/AgentsMenu/MaintenanceAgent"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ccvj4")
