@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://terminal.gd" id="8_pey6t"]
 [ext_resource type="PackedScene" uid="uid://chdvhwutlyvfm" path="res://terminal_root.tscn" id="9_4cctw"]
 [ext_resource type="Script" path="res://player.gd" id="9_7n80l"]
-[ext_resource type="Texture2D" uid="uid://bgc7o0craxnpt" path="res://background/Sprites.png" id="10_gb75q"]
+[ext_resource type="Texture2D" uid="uid://bgc7o0craxnpt" path="res://Sprites/Sprites.png" id="10_gb75q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu2jc"]
 

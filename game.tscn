@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://d05wrrfpl0b5g"]
+[gd_scene load_steps=67 format=3 uid="uid://d05wrrfpl0b5g"]
 
 [ext_resource type="Texture2D" uid="uid://dllo67g7tjkg7" path="res://background/Bunk.png" id="1_wt5oo"]
 [ext_resource type="Script" path="res://player.gd" id="1_yft62"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cp10mmfsmagt4" path="res://background/Med.png" id="6_yoxsl"]
 [ext_resource type="Texture2D" uid="uid://d1pm8iq2bqclo" path="res://background/Mine.png" id="7_u3voh"]
 [ext_resource type="Script" path="res://terminal.gd" id="8_kww22"]
-[ext_resource type="Texture2D" uid="uid://bgc7o0craxnpt" path="res://background/Sprites.png" id="9_sqo4e"]
+[ext_resource type="Texture2D" uid="uid://bgc7o0craxnpt" path="res://Sprites/Sprites.png" id="9_sqo4e"]
 [ext_resource type="Texture2D" uid="uid://cn8oyljvaio8d" path="res://background/Greenhouse.png" id="9_tookj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu2jc"]
@@ -224,6 +224,8 @@ size = Vector2(11.3636, 10.9091)
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7c82"]
 atlas = ExtResource("9_sqo4e")
 region = Rect2(993, 369, 197, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfddp"]
 
 [node name="Main" type="Node2D"]
 
@@ -471,6 +473,9 @@ shape = SubResource("RectangleShape2D_02gmo")
 position = Vector2(1, 5.46378)
 scale = Vector2(0.132162, 0.125362)
 texture = SubResource("AtlasTexture_p7c82")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_lfddp")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(3, 2)
