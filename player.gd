@@ -1,30 +1,11 @@
 extends CharacterBody2D
 
-<<<<<<< HEAD
-@export var speed: float = 100.0  # Slower speed
+@export var speed: float = 50.0  # Player movement speed
 
-# Movement direction
 var direction = Vector2.ZERO
 
-# References for the walls
-var left_walls = []
-var right_walls = []
-var top_walls = []
-var bottom_walls = []
-
-func _ready():
-	# Add references to your wall nodes based on names
-	left_walls = get_tree().get_nodes_in_group("left_walls")
-	right_walls = get_tree().get_nodes_in_group("right_walls")
-	top_walls = get_tree().get_nodes_in_group("top_walls")
-	bottom_walls = get_tree().get_nodes_in_group("bottom_walls")
-=======
-@export var speed: float = 200.0
-var nearby_terminal: Area2D = null  # Track the nearest terminal
->>>>>>> c9446906f4905061d3c98f7317989e5de163893a
-
 func _physics_process(delta):
-	# Reset the movement direction
+	# Reset direction each frame
 	direction = Vector2.ZERO
 
 	# Handle movement input
@@ -37,14 +18,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1
 
-<<<<<<< HEAD
-	# Normalize direction for consistent speed
+	# Normalize direction for consistent speed (diagonal movement is not faster)
 	direction = direction.normalized()
+
+	# Set the velocity to move the character in the specified direction
 	velocity = direction * speed
 
-
-	# Move the character
-=======
-	velocity = direction.normalized() * speed
->>>>>>> c9446906f4905061d3c98f7317989e5de163893a
+	# Move the character with the calculated velocity
 	move_and_slide()
