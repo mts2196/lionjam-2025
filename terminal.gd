@@ -5,6 +5,7 @@ var player_inside = false  # Tracks if the player is inside the terminal's area
 @export var terminal_ui_scene: PackedScene  # Drag & drop TerminalUI.tscn in the editor
 var ui_instance = null  # Reference to the spawned terminal UI
 
+
 func _process(_delta):
 	if player_inside and Input.is_action_just_pressed("interact"):
 		open_terminal_ui()
@@ -33,7 +34,6 @@ func open_terminal_ui():
 			get_tree().current_scene.add_child(ui_instance)  # Fallback (shouldn't be needed)
 		# Wait a frame so layout updates correctly
 		await get_tree().process_frame  
-#get_tree().paused = true  # (Optional) Pause game while UI is open
 		# Ensure terminal is centered
 		var screen_size = get_viewport_rect().size
 		ui_instance.global_position = (screen_size / 2) - (ui_instance.size / 2)
@@ -43,4 +43,3 @@ func close_terminal_ui():
 	if ui_instance:
 		ui_instance.queue_free()
 		ui_instance = null
-		#get_tree().paused = false  # Resume game

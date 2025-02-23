@@ -3,7 +3,12 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 var nearby_terminal: Area2D = null  # Track the nearest terminal
 
+var can_move = true
+
 func _physics_process(delta):
+	if not can_move:
+		return
+
 	var direction = Vector2.ZERO
 
 	if Input.is_action_pressed("move_up"):
