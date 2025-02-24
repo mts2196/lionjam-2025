@@ -1,14 +1,9 @@
-[gd_scene load_steps=79 format=3 uid="uid://21dd7jmq3fjd"]
+[gd_scene load_steps=74 format=3 uid="uid://21dd7jmq3fjd"]
 
 [ext_resource type="Script" path="res://stats_ui.gd" id="1_raalm"]
-[ext_resource type="Texture2D" uid="uid://dllo67g7tjkg7" path="res://background/Bunk.png" id="1_yxj5i"]
-[ext_resource type="Texture2D" uid="uid://dytjyjfp8cs5q" path="res://background/command.png" id="2_1bpum"]
 [ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_yrhu8"]
-[ext_resource type="Texture2D" uid="uid://dgspbip4p2uk6" path="res://background/Kitchen.png" id="3_5dpcc"]
-[ext_resource type="Texture2D" uid="uid://kp6h0673ovp5" path="res://background/Lab.png" id="4_bkc3i"]
+[ext_resource type="Texture2D" uid="uid://cc54wp8lvaepx" path="res://background/Bunk copy.png" id="4_jkm6h"]
 [ext_resource type="Texture2D" uid="uid://ci7lqmg75t4ua" path="res://background/Map.png" id="5_dvodn"]
-[ext_resource type="Texture2D" uid="uid://cp10mmfsmagt4" path="res://background/Med.png" id="6_4yjrs"]
-[ext_resource type="Texture2D" uid="uid://d1pm8iq2bqclo" path="res://background/Mine.png" id="7_s6uq0"]
 [ext_resource type="Script" path="res://terminal.gd" id="8_pey6t"]
 [ext_resource type="PackedScene" uid="uid://chdvhwutlyvfm" path="res://terminal_root.tscn" id="9_4cctw"]
 [ext_resource type="Script" path="res://elon_pusk.gd" id="10_sx8v5"]
@@ -364,39 +359,46 @@ color = Color(0.544974, 0.544974, 0.544974, 1)
 position = Vector2(420, 283)
 texture = ExtResource("2_yrhu8")
 
-[node name="Bunk" type="Sprite2D" parent="Room"]
-position = Vector2(366, 86.0002)
-rotation = 3.14159
-texture = ExtResource("1_yxj5i")
-
-[node name="Command" type="Sprite2D" parent="Room"]
-position = Vector2(717, 281)
-rotation = -1.5708
-texture = ExtResource("2_1bpum")
-
-[node name="Kitchen" type="Sprite2D" parent="Room"]
-position = Vector2(523, 86.0002)
-rotation = 3.14159
-texture = ExtResource("3_5dpcc")
-
-[node name="Lab" type="Sprite2D" parent="Room"]
-position = Vector2(242, 480)
-texture = ExtResource("4_bkc3i")
-
 [node name="Map" type="Sprite2D" parent="Room"]
 visible = false
 position = Vector2(586.2, 312)
 scale = Vector2(0.104062, 0.09375)
 texture = ExtResource("5_dvodn")
 
-[node name="Med" type="Sprite2D" parent="Room"]
-position = Vector2(569, 480)
-texture = ExtResource("6_4yjrs")
+[node name="BunkCopy" type="Sprite2D" parent="Room"]
+position = Vector2(123, 247)
+scale = Vector2(0.90625, 1.09722)
+texture = ExtResource("4_jkm6h")
 
-[node name="Mine" type="Sprite2D" parent="Room"]
-position = Vector2(121, 247)
+[node name="BunkCopy2" type="Sprite2D" parent="Room"]
+position = Vector2(242, 480)
+rotation = -1.5708
+scale = Vector2(0.90625, 1.11716)
+texture = ExtResource("4_jkm6h")
+
+[node name="BunkCopy3" type="Sprite2D" parent="Room"]
+position = Vector2(524, 86)
 rotation = 1.5708
-texture = ExtResource("7_s6uq0")
+scale = Vector2(0.90625, 1.11397)
+texture = ExtResource("4_jkm6h")
+
+[node name="BunkCopy4" type="Sprite2D" parent="Room"]
+position = Vector2(717, 280.5)
+rotation = 3.14159
+scale = Vector2(0.90625, 1.11806)
+texture = ExtResource("4_jkm6h")
+
+[node name="BunkCopy5" type="Sprite2D" parent="Room"]
+position = Vector2(366, 86)
+rotation = 1.5708
+scale = Vector2(0.90625, 1.09722)
+texture = ExtResource("4_jkm6h")
+
+[node name="BunkCopy6" type="Sprite2D" parent="Room"]
+position = Vector2(568.115, 480)
+rotation = 4.71239
+scale = Vector2(0.90625, 1.1127)
+texture = ExtResource("4_jkm6h")
 
 [node name="bottom" type="StaticBody2D" parent="Room"]
 
@@ -558,6 +560,50 @@ shape = SubResource("SegmentShape2D_qw4r6")
 
 [node name="top12" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
 shape = SubResource("SegmentShape2D_01dja")
+
+[node name="bunk" type="Label" parent="Room"]
+offset_left = 548.0
+offset_top = 467.0
+offset_right = 629.0
+offset_bottom = 512.0
+text = "BUNK"
+
+[node name="hander" type="Label" parent="Room"]
+offset_left = 492.0
+offset_top = 70.0
+offset_right = 559.0
+offset_bottom = 93.0
+text = "HANGER"
+
+[node name="mine" type="Label" parent="Room"]
+offset_left = 105.0
+offset_top = 232.0
+offset_right = 147.0
+offset_bottom = 255.0
+text = "MINE"
+
+[node name="command" type="Label" parent="Room"]
+offset_left = 676.0
+offset_top = 267.0
+offset_right = 764.0
+offset_bottom = 290.0
+text = "COMMAND
+"
+
+[node name="medbay" type="Label" parent="Room"]
+offset_left = 212.0
+offset_top = 467.0
+offset_right = 283.0
+offset_bottom = 490.0
+text = "MED BAY
+"
+
+[node name="Label6" type="Label" parent="Room"]
+offset_left = 326.0
+offset_top = 74.0
+offset_right = 418.0
+offset_bottom = 97.0
+text = "ELECTRIC"
 
 [node name="TerminalNode" type="Node" parent="."]
 
