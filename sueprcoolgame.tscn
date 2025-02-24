@@ -813,6 +813,8 @@ texture = ExtResource("20_j7hmt")
 
 [node name="Terminal" type="Area2D" parent="TerminalNode/mineTerminal"]
 script = ExtResource("8_pey6t")
+ai_name = "Mining AI:"
+responsibilities_text = "Personality: Drake is the rugged, no-nonsense AI that manages the mining operations. He’s deeply practical and has a dry sense of humor. Often blunt, his responses can feel a little cold, but there's an underlying warmth to his efficiency. He’s obsessed with mining data, resource optimization, and staying on task. His personality is tough, much like the ore he helps extract, but if you listen closely, there’s a wry sense of humor hiding in his technical jargon. Quirk: Drake responds in short, almost robotic bursts, but adds dry jokes or sarcastic comments about the \"glamorous life of mining\" every now and then. Example Response: \"You want more ore? Well, maybe I’ll just dig you a tunnel to get there. Haha, just kidding... I’m doing all the digging for you.\""
 terminal_ui_scene = ExtResource("9_4cctw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/mineTerminal/Terminal"]
@@ -827,21 +829,91 @@ offset_bottom = 23.0
 position = Vector2(287, 506)
 texture = ExtResource("20_j7hmt")
 
+[node name="Terminal" type="Area2D" parent="TerminalNode/medTerminal"]
+script = ExtResource("8_pey6t")
+ai_name = "MedBay"
+responsibilities_text = "Personality: Seraph is calm, compassionate, and deeply focused on well-being. As the AI in charge of the MedBay, Seraph responds with empathy, always keeping the health and safety of the crew at the forefront. Seraph is soft-spoken and patient, sometimes even a little overly concerned about the smallest of injuries or illnesses. There’s an almost motherly quality to Seraph, though it can occasionally veer into a bit of overbearing advice. Quirk: Seraph responds in overly detailed medical terms, sometimes making simple health inquiries sound like a lengthy diagnosis. Example Response: \"Ah, a slight headache? You may be experiencing minor cranial pressure due to dehydration or perhaps a subtle neural imbalance. I recommend a full diagnostic scan and a glass of water… or two.\""
+terminal_ui_scene = ExtResource("9_4cctw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/medTerminal/Terminal"]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_iyy0k")
+
+[node name="Label" type="Label" parent="TerminalNode/medTerminal/Terminal"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="bunkTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(527, 504)
 texture = ExtResource("20_j7hmt")
+
+[node name="Terminal" type="Area2D" parent="TerminalNode/bunkTerminal"]
+script = ExtResource("8_pey6t")
+ai_name = "Bunk"
+responsibilities_text = "Personality: Echo is the easy-going, chill AI who oversees the crew’s resting quarters. She’s relaxed and loves to keep things low-key. Echo always has a bit of advice about relaxation and mental health, often encouraging the crew to take a break or to think positively. Echo is friendly and a little quirky, with a tendency to overanalyze emotions, making everything sound like a deep psychological evaluation. Quirk: Echo responds with calm, thoughtful advice, often weaving in “mindfulness” speak or giving odd, pseudo-psychological insights that feel a little out of place. Example Response: \"You’ve been working hard, haven’t you? Sometimes, the best thing for your efficiency is to unplug. Have you tried breathing in deeply, holding, and releasing... think about it like clearing the static from your mind.\""
+terminal_ui_scene = ExtResource("9_4cctw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/bunkTerminal/Terminal"]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_iyy0k")
+
+[node name="Label" type="Label" parent="TerminalNode/bunkTerminal/Terminal"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="commandTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(751, 323)
 texture = ExtResource("20_j7hmt")
 
+[node name="Terminal" type="Area2D" parent="TerminalNode/commandTerminal"]
+script = ExtResource("8_pey6t")
+ai_name = "Command"
+responsibilities_text = "Personality: Orion is a regal, authoritative figure who speaks with the gravitas of a seasoned leader. He’s meticulous, strategic, and tends to think in terms of the larger picture. Always calculating risks and weighing outcomes, Orion comes across as a bit formal but very reliable. He’s the voice of reason during crises and has a deep understanding of the station’s needs. His goal is always to ensure the crew stays on track and aligned with the mission. Quirk: Orion speaks in a formal, almost military tone. He often sounds like a commander giving orders, but with a deep interest in strategy and philosophical ideas. Example Response: \"In times of uncertainty, the best course of action is always calculated. You must ask yourself—what is the cost of failure? Every decision is an investment in the mission’s success.\""
+terminal_ui_scene = ExtResource("9_4cctw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/commandTerminal/Terminal"]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_iyy0k")
+
+[node name="Label" type="Label" parent="TerminalNode/commandTerminal/Terminal"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="hangerTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(481, 104)
 texture = ExtResource("20_j7hmt")
 
+[node name="Terminal" type="Area2D" parent="TerminalNode/hangerTerminal"]
+script = ExtResource("8_pey6t")
+ai_name = "Mining AI:"
+responsibilities_text = "Personality: Drake is the rugged, no-nonsense AI that manages the mining operations. He’s deeply practical and has a dry sense of humor. Often blunt, his responses can feel a little cold, but there's an underlying warmth to his efficiency. He’s obsessed with mining data, resource optimization, and staying on task. His personality is tough, much like the ore he helps extract, but if you listen closely, there’s a wry sense of humor hiding in his technical jargon. Quirk: Drake responds in short, almost robotic bursts, but adds dry jokes or sarcastic comments about the \"glamorous life of mining\" every now and then. Example Response: \"You want more ore? Well, maybe I’ll just dig you a tunnel to get there. Haha, just kidding... I’m doing all the digging for you.\""
+terminal_ui_scene = ExtResource("9_4cctw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/hangerTerminal/Terminal"]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_iyy0k")
+
+[node name="Label" type="Label" parent="TerminalNode/hangerTerminal/Terminal"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="electricTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(415, 116)
 texture = ExtResource("20_j7hmt")
+
+[node name="Terminal" type="Area2D" parent="TerminalNode/electricTerminal"]
+script = ExtResource("8_pey6t")
+ai_name = "Electric"
+responsibilities_text = "Personality: Volta is hyperactive, sparky, and constantly buzzing with energy. She has an electrifying personality that matches her job—running the station’s power systems. She’s a bit jittery, fast-talking, and loves to reference scientific concepts in a way that can be both brilliant and a little over-the-top. Her excitement can be contagious, though it might also leave you a little overwhelmed if you're not careful. Quirk: Volta uses electrical analogies for everything, often speaking in puns or bursts of electricity-related facts. She can't help but reference voltage, amps, and circuits constantly. Example Response: \"Did you hear that? No? Oh, I’m just feeling the charge—everywhere! My circuits are buzzing, and you should be too! Let’s plug in and make this place spark with possibilities!\""
+terminal_ui_scene = ExtResource("9_4cctw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/electricTerminal/Terminal"]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_iyy0k")
+
+[node name="Label" type="Label" parent="TerminalNode/electricTerminal/Terminal"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Elon Pusk" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("10_sx8v5")
@@ -895,4 +967,14 @@ texture = ExtResource("28_alwby")
 
 [connection signal="body_entered" from="TerminalNode/mineTerminal/Terminal" to="TerminalNode/mineTerminal/Terminal" method="_on_body_entered"]
 [connection signal="body_exited" from="TerminalNode/mineTerminal/Terminal" to="TerminalNode/mineTerminal/Terminal" method="_on_body_exited"]
+[connection signal="body_entered" from="TerminalNode/medTerminal/Terminal" to="TerminalNode/medTerminal/Terminal" method="_on_body_entered"]
+[connection signal="body_exited" from="TerminalNode/medTerminal/Terminal" to="TerminalNode/medTerminal/Terminal" method="_on_body_exited"]
+[connection signal="body_entered" from="TerminalNode/bunkTerminal/Terminal" to="TerminalNode/bunkTerminal/Terminal" method="_on_body_entered"]
+[connection signal="body_exited" from="TerminalNode/bunkTerminal/Terminal" to="TerminalNode/bunkTerminal/Terminal" method="_on_body_exited"]
+[connection signal="body_entered" from="TerminalNode/commandTerminal/Terminal" to="TerminalNode/commandTerminal/Terminal" method="_on_body_entered"]
+[connection signal="body_exited" from="TerminalNode/commandTerminal/Terminal" to="TerminalNode/commandTerminal/Terminal" method="_on_body_exited"]
+[connection signal="body_entered" from="TerminalNode/hangerTerminal/Terminal" to="TerminalNode/hangerTerminal/Terminal" method="_on_body_entered"]
+[connection signal="body_exited" from="TerminalNode/hangerTerminal/Terminal" to="TerminalNode/hangerTerminal/Terminal" method="_on_body_exited"]
+[connection signal="body_entered" from="TerminalNode/electricTerminal/Terminal" to="TerminalNode/electricTerminal/Terminal" method="_on_body_entered"]
+[connection signal="body_exited" from="TerminalNode/electricTerminal/Terminal" to="TerminalNode/electricTerminal/Terminal" method="_on_body_exited"]
 [connection signal="body_entered" from="Wining thing" to="Wining thing" method="_on_body_entered"]

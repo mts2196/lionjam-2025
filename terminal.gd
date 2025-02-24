@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var ai_name: String = "hydroponics"  # AI name (e.g., "security", "maintenance", "hart")
+@export var responsibilities_text: String = "Manage oxygen and plant growth."  # Unique per terminal
 @export var terminal_ui_scene: PackedScene  # Drag & drop TerminalUI.tscn in the editor
 
 var player_inside = false  # Tracks if the player is inside this terminal's area
@@ -13,41 +14,39 @@ func _process(_delta):
 
 func _on_body_entered(body: Node2D) -> void:
 	print("entered:", body.name)
-
-	# Check if the player entered
-	if body.is_in_group("player"):  # Make sure the player is in the "player" group
+	if body.is_in_group("player"):
 		player_inside = true
 
 func _on_body_exited(body: Node2D) -> void:
 	print("exited:", body.name)
-
-	# Check if the player exited
 	if body.is_in_group("player"):
 		player_inside = false
 
 func open_terminal_ui():
-	if ui_instance == null:  # Prevent multiple instances
-		# Check if terminal_ui_scene is assigned
+	if ui_instance == null:
 		if terminal_ui_scene == null:
 			print("ERROR: terminal_ui_scene is NOT set in the editor!")
 			return
 
 		print("Instantiating Terminal UI...")
 		ui_instance = terminal_ui_scene.instantiate()
-		
-		# Assign AI name to the UI, if supported
-		if "active_ai" in ui_instance:
-			ui_instance.active_ai = ai_name
-		else:
-			print("WARNING: Terminal UI does not have 'active_ai' variable.")
 
-		# Add to UI layer
+		# ✅ Assign AI name and responsibilities
+		if "ai_name" in ui_instance:
+			ui_instance.ai_name = ai_name
+		else:
+			print("WARNING: Terminal UI does not have 'ai_name' variable.")
+
+		if "responsibilities_text" in ui_instance:
+			ui_instance.responsibilities_text = responsibilities_text
+		else:
+			print("WARNING: Terminal UI does not have 'responsibilities_text' variable.")
+
+		# Add UI to the UI layer
 		var ui_layer = get_tree().current_scene.find_child("UI", true, false)
 		if ui_layer:
-			print("Adding terminal UI to UI layer...")
 			ui_layer.add_child(ui_instance)
 		else:
-			print("UI layer not found, adding to current scene...")
 			get_tree().current_scene.add_child(ui_instance)
 
 		# Wait a frame for layout updates
