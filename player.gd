@@ -4,9 +4,14 @@ extends CharacterBody2D
 
 var direction = Vector2.ZERO
 
+var can_move = true
+
 func _physics_process(delta):
-	# Reset direction each frame
-	direction = Vector2.ZERO
+
+	if not can_move:
+		return
+
+	var direction = Vector2.ZERO
 
 	# Handle movement input
 	if Input.is_action_pressed("move_up"):
