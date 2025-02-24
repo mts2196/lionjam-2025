@@ -364,7 +364,7 @@ rotation = 1.5708
 texture = ExtResource("8_81rwq")
 
 [node name="Terminal" type="Area2D" parent="Room"]
-position = Vector2(100, 150)
+position = Vector2(100, 200)
 script = ExtResource("9_1ufdu")
 
 [node name="ColorRect" type="ColorRect" parent="Room/Terminal"]

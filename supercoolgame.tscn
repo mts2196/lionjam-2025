@@ -1,0 +1,99 @@
+[gd_scene load_steps=14 format=3 uid="uid://c4pf3s678t3y7"]
+
+[ext_resource type="Texture2D" uid="uid://dllo67g7tjkg7" path="res://background/Bunk.png" id="1_7meb1"]
+[ext_resource type="Texture2D" uid="uid://dytjyjfp8cs5q" path="res://background/command.png" id="2_d3cay"]
+[ext_resource type="Texture2D" uid="uid://dgspbip4p2uk6" path="res://background/Kitchen.png" id="3_v5b87"]
+[ext_resource type="Texture2D" uid="uid://kp6h0673ovp5" path="res://background/Lab.png" id="4_fs3x0"]
+[ext_resource type="Texture2D" uid="uid://ci7lqmg75t4ua" path="res://background/Map.png" id="5_1pxys"]
+[ext_resource type="Texture2D" uid="uid://cp10mmfsmagt4" path="res://background/Med.png" id="6_ljf0m"]
+[ext_resource type="Texture2D" uid="uid://d1pm8iq2bqclo" path="res://background/Mine.png" id="7_pwgf7"]
+[ext_resource type="Script" path="res://terminal.gd" id="8_3k333"]
+[ext_resource type="Script" path="res://player.gd" id="9_fl172"]
+[ext_resource type="Texture2D" uid="uid://bgc7o0craxnpt" path="res://background/Sprites.png" id="10_lfmjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu2jc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02gmo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7c82"]
+atlas = ExtResource("10_lfmjg")
+region = Rect2(993, 369, 197, 200)
+
+[node name="Main" type="Node2D"]
+
+[node name="Room" type="Node2D" parent="."]
+
+[node name="Background" type="ColorRect" parent="Room"]
+custom_minimum_size = Vector2(800, 300)
+offset_left = -48.0
+offset_right = 752.0
+offset_bottom = 567.0
+color = Color(0.544974, 0.544974, 0.544974, 1)
+
+[node name="Bunk" type="Sprite2D" parent="Room"]
+position = Vector2(259, 80)
+rotation = 3.14159
+texture = ExtResource("1_7meb1")
+
+[node name="Command" type="Sprite2D" parent="Room"]
+position = Vector2(619, 256)
+rotation = -1.5708
+texture = ExtResource("2_d3cay")
+
+[node name="Kitchen" type="Sprite2D" parent="Room"]
+position = Vector2(441, 80)
+rotation = 3.14159
+texture = ExtResource("3_v5b87")
+
+[node name="Lab" type="Sprite2D" parent="Room"]
+position = Vector2(261, 447)
+texture = ExtResource("4_fs3x0")
+
+[node name="Map" type="Sprite2D" parent="Room"]
+visible = false
+position = Vector2(586.2, 312)
+scale = Vector2(0.104062, 0.09375)
+texture = ExtResource("5_1pxys")
+
+[node name="Med" type="Sprite2D" parent="Room"]
+position = Vector2(441, 447)
+texture = ExtResource("6_ljf0m")
+
+[node name="Mine" type="Sprite2D" parent="Room"]
+position = Vector2(79, 258)
+rotation = 1.5708
+texture = ExtResource("7_pwgf7")
+
+[node name="Terminal" type="Area2D" parent="Room"]
+position = Vector2(100, 150)
+script = ExtResource("8_3k333")
+
+[node name="ColorRect" type="ColorRect" parent="Room/Terminal"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Terminal"]
+shape = SubResource("RectangleShape2D_lu2jc")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(50, 50)
+script = ExtResource("9_fl172")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2(2.2, 2.2)
+shape = SubResource("RectangleShape2D_02gmo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.218274, 0.218274)
+texture = SubResource("AtlasTexture_p7c82")
+
+[node name="Area2D" type="Area2D" parent="Player"]
