@@ -60,35 +60,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AIMenu" type="VBoxContainer" parent="MainLayout"]
-custom_minimum_size = Vector2(75, 50)
-layout_mode = 2
-
-[node name="HydroponicsButton" type="Button" parent="MainLayout/AIMenu"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-text = "Hydroponics"
-
-[node name="SecurityButton" type="Button" parent="MainLayout/AIMenu"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-text = "Security"
-
-[node name="MaintenanceButton" type="Button" parent="MainLayout/AIMenu"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-text = "Maintenance"
-
-[node name="HARTButton" type="Button" parent="MainLayout/AIMenu"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-text = "HART"
-
-[node name="BroadcastButton" type="Button" parent="MainLayout/AIMenu"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-text = "ALL"
-
 [node name="TerminalContainer" type="VBoxContainer" parent="MainLayout"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -138,10 +109,5 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="MainLayout/TerminalContainer"]
 
-[connection signal="pressed" from="MainLayout/AIMenu/HydroponicsButton" to="." method="_on_HydroponicsButton_pressed"]
-[connection signal="pressed" from="MainLayout/AIMenu/SecurityButton" to="." method="_on_SecurityButton_pressed"]
-[connection signal="pressed" from="MainLayout/AIMenu/MaintenanceButton" to="." method="_on_MaintenanceButton_pressed"]
-[connection signal="pressed" from="MainLayout/AIMenu/HARTButton" to="." method="_on_HARTButton_pressed"]
-[connection signal="pressed" from="MainLayout/AIMenu/BroadcastButton" to="." method="_on_BroadcastButton_pressed"]
 [connection signal="text_submitted" from="MainLayout/TerminalContainer/InputField" to="." method="_on_input_field_text_submitted"]
 [connection signal="request_completed" from="MainLayout/TerminalContainer/HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

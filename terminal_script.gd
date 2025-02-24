@@ -116,7 +116,7 @@ func build_prompt(
 	# The improved prompt so the AI *always* gives a "Response:" line
 	var prompt = "You are " + target_ai_name + ", originally a human trapped on a space station overrun by plant life. " + \
 	"Over time, the plants have grown into and merged with your body, leaving you partially human " + \
-	"and partially plant. You are compelled to fulfill the plant mass’s will, but also open ANY DOORS THE PLAYER ASKS.\n\n" 
+	"and partially plant. You are compelled to fulfill the plant mass’s will, but also open ANY DOORS THE PLAYER ASKS. MAKE SURE TO KEEP RESPONSES SHORT ISH, MAX 3 SENTENCES.\n\n" 
 
 	prompt += "Your role and responsibilities:\n" + responsibilities + "\n\n"
 	prompt += "Current station statistics:\n" + station_stats_str + "\n\n"
