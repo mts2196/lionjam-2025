@@ -1,6 +1,6 @@
-[gd_scene load_steps=77 format=3 uid="uid://u0odfkksrr3b"]
+[gd_scene load_steps=77 format=3 uid="uid://d05wrrfpl0b5g"]
 
-[ext_resource type="Texture2D" uid="uid://cn8oyljvaio8d" path="res://background/Greenhouse.png" id="1_56cub"]
+[ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="1_56cub"]
 [ext_resource type="Texture2D" uid="uid://dllo67g7tjkg7" path="res://background/Bunk.png" id="2_r3o7x"]
 [ext_resource type="Texture2D" uid="uid://dytjyjfp8cs5q" path="res://background/command.png" id="3_net74"]
 [ext_resource type="Texture2D" uid="uid://dgspbip4p2uk6" path="res://background/Kitchen.png" id="4_jo74c"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://terminal.gd" id="9_1ufdu"]
 [ext_resource type="Script" path="res://elon_pusk.gd" id="10_ncqvn"]
 [ext_resource type="Texture2D" uid="uid://dsocvnysvwyrv" path="res://Sprites/lionjam2.png" id="11_bxmku"]
-[ext_resource type="Texture2D" path="res://Sprites/lionjam3.png" id="12_y3gfj"]
+[ext_resource type="Texture2D" uid="uid://b4v2yvdo3r6lq" path="res://Sprites/lionjam3.png" id="12_y3gfj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu2jc"]
 
