@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://21dd7jmq3fjd"]
+[gd_scene load_steps=97 format=3 uid="uid://21dd7jmq3fjd"]
 
 [ext_resource type="Script" path="res://stats_ui.gd" id="1_raalm"]
 [ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_yrhu8"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://ccm7bfvwsmfpy" path="res://background/abjects/electric.png" id="6_rahnb"]
 [ext_resource type="Texture2D" uid="uid://bf4vwnqua0tgi" path="res://background/abjects/forklift.png" id="7_h3wtb"]
 [ext_resource type="Texture2D" uid="uid://bcv17gv57ww0b" path="res://background/abjects/med.png" id="8_dl4oe"]
+[ext_resource type="Script" path="res://terminal.gd" id="8_pey6t"]
+[ext_resource type="PackedScene" uid="uid://chdvhwutlyvfm" path="res://terminal_root.tscn" id="9_4cctw"]
 [ext_resource type="Texture2D" uid="uid://dfe4tp0etl0vw" path="res://background/abjects/shelf.png" id="9_ne7bf"]
 [ext_resource type="Texture2D" uid="uid://b423o05w4t5su" path="res://background/Untitled 02-23-2025 10-08-37.png" id="10_6c2aw"]
 [ext_resource type="Texture2D" uid="uid://cwkjqwyslobx3" path="res://background/abjects/sleeppod.png" id="10_e75l2"]
@@ -235,6 +237,9 @@ b = Vector2(647, 259)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkh34"]
 size = Vector2(7.2072, 32.4324)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyy0k"]
+size = Vector2(62, 65)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8cc0"]
 atlas = ExtResource("11_tmfci")
@@ -728,16 +733,16 @@ position = Vector2(570.061, 407.77)
 scale = Vector2(-0.0451534, -0.0127381)
 texture = ExtResource("16_lxxbq")
 
-[node name="medDoor" type="StaticBody2D" parent="doors"]
+[node name="medbayDoor" type="StaticBody2D" parent="doors"]
 script = ExtResource("17_jv2be")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/medDoor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/medbayDoor"]
 position = Vector2(243.061, 407.696)
 rotation = 1.5708
 scale = Vector2(1.11, 1.11)
 shape = SubResource("RectangleShape2D_kkh34")
 
-[node name="Sprite2D" type="Sprite2D" parent="doors/medDoor"]
+[node name="Sprite2D" type="Sprite2D" parent="doors/medbayDoor"]
 position = Vector2(243.061, 407.77)
 scale = Vector2(-0.0451534, -0.0127381)
 texture = ExtResource("16_lxxbq")
@@ -756,30 +761,30 @@ position = Vector2(365.061, 156.77)
 scale = Vector2(-0.0451534, -0.0127381)
 texture = ExtResource("16_lxxbq")
 
-[node name="hangerDoor" type="StaticBody2D" parent="doors"]
+[node name="hangarDoor" type="StaticBody2D" parent="doors"]
 script = ExtResource("19_8r2tj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/hangerDoor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/hangarDoor"]
 position = Vector2(522.061, 156.696)
 rotation = 1.5708
 scale = Vector2(1.11, 1.11)
 shape = SubResource("RectangleShape2D_kkh34")
 
-[node name="Sprite2D" type="Sprite2D" parent="doors/hangerDoor"]
+[node name="Sprite2D" type="Sprite2D" parent="doors/hangarDoor"]
 position = Vector2(522.061, 156.77)
 scale = Vector2(-0.0451534, -0.0127381)
 texture = ExtResource("16_lxxbq")
 
-[node name="minedDoor" type="StaticBody2D" parent="doors"]
+[node name="mineDoor" type="StaticBody2D" parent="doors"]
 script = ExtResource("20_lve7b")
 
-[node name="Sprite2D" type="Sprite2D" parent="doors/minedDoor"]
+[node name="Sprite2D" type="Sprite2D" parent="doors/mineDoor"]
 position = Vector2(195, 248.074)
 rotation = -1.5708
 scale = Vector2(0.0451534, 0.0127381)
 texture = ExtResource("16_lxxbq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/minedDoor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/mineDoor"]
 position = Vector2(195, 248)
 scale = Vector2(1.11, 1.11)
 shape = SubResource("RectangleShape2D_kkh34")
@@ -804,6 +809,18 @@ texture = ExtResource("16_lxxbq")
 position = Vector2(87, 195)
 texture = ExtResource("20_j7hmt")
 
+[node name="Terminal" type="Area2D" parent="TerminalNode/mineTerminal"]
+script = ExtResource("8_pey6t")
+terminal_ui_scene = ExtResource("9_4cctw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/mineTerminal/Terminal"]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_iyy0k")
+
+[node name="Label" type="Label" parent="TerminalNode/mineTerminal/Terminal"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="medTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(287, 506)
 texture = ExtResource("20_j7hmt")
@@ -824,7 +841,7 @@ texture = ExtResource("20_j7hmt")
 position = Vector2(415, 116)
 texture = ExtResource("20_j7hmt")
 
-[node name="Elon Pusk" type="CharacterBody2D" parent="."]
+[node name="Elon Pusk" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("10_sx8v5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elon Pusk"]
@@ -863,3 +880,7 @@ stream = ExtResource("27_4iy0b")
 position = Vector2(516, 171)
 scale = Vector2(3.16, 2.46)
 texture = ExtResource("28_alwby")
+
+[connection signal="body_entered" from="TerminalNode/mineTerminal/Terminal" to="TerminalNode/mineTerminal/Terminal" method="_on_body_entered"]
+[connection signal="body_exited" from="TerminalNode/mineTerminal/Terminal" to="TerminalNode/mineTerminal/Terminal" method="_on_body_exited"]
+[connection signal="body_entered" from="Wining thing" to="Wining thing" method="_on_body_entered"]

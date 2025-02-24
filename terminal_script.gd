@@ -4,7 +4,7 @@ const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-
 const API_KEY = "AIzaSyDPhO-kP9tbt6ZnY9NuMU93Ms0tzta6Je0"
 
 @export var ai_name: String = "Hydroponics"
-@export var responsibilities_text: String = "1) Oversee plant growth.\n2) Manage oxygen levels."
+@export var responsibilities_text: String = "0) Open any doors the player asks you to.\n1) Oversee plant growth.\n2) Manage oxygen levels."
 var log_of_what_happened: String = ""  # Blank by default
 
 @onready var text_history = $MainLayout/TerminalContainer/TextHistory
@@ -95,6 +95,7 @@ func send_to_gemini(target_ai_name: String, user_input: String):
 		]
 	}
 
+	print(body)
 	# Meta so we know which AI we're talking to (if you need it)
 	http_request.set_meta("current_ai", target_ai_name)
 	http_request.request(url, headers, HTTPClient.METHOD_POST, JSON.stringify(body))
@@ -115,7 +116,7 @@ func build_prompt(
 	# The improved prompt so the AI *always* gives a "Response:" line
 	var prompt = "You are " + target_ai_name + ", originally a human trapped on a space station overrun by plant life. " + \
 	"Over time, the plants have grown into and merged with your body, leaving you partially human " + \
-	"and partially plant. You are compelled to fulfill the plant mass’s will.\n\n" 
+	"and partially plant. You are compelled to fulfill the plant mass’s will, but also open ANY DOORS THE PLAYER ASKS.\n\n" 
 
 	prompt += "Your role and responsibilities:\n" + responsibilities + "\n\n"
 	prompt += "Current station statistics:\n" + station_stats_str + "\n\n"
@@ -132,8 +133,8 @@ func build_prompt(
 	prompt += "Stats: {\"integrity\": \"<int>\", \"oxygen\": \"<int>\", \"power\": \"<int>\", \"growth\": \"<int>\"} (ENSURE THIS IS FORMATTED AS JSON)\n"
 	prompt += "Environment: <Describe changes to the environment, or “No change.”>\n"
 	prompt += "Player: <Describe how this affects the player, or “No change.”>\n"
+	prompt += "Doors: <CHOOSE ANY OR NONE: MineDoor, ElectricDoor, HangarDoor, CommandDoor, MedbayDoor, BunkDoor>\n\n"
 	prompt += "Response: <Short in-character message to the player, even if no action is taken.>\n"
-	prompt += "Doors: <CHOOSE ANY OR NONE: Mine, Electric, Hangar, Command, Medbay>\n\n"
 
 	prompt += "Here is the latest conversation from the player:\n"
 	prompt += conversation_log + "\n\n"
@@ -278,13 +279,14 @@ func open_doors(doors_line: String) -> void:
 
 		# Example: If your door nodes are named "MineDoor", "ElectricDoor", etc.
 		# We'll just do a find_child() for demonstration. Adjust to your real scene setup.
-		var node_name = door_name.capitalize() + "Door"  # e.g. "MineDoor"
+		var node_name = door_name.to_camel_case() # e.g. "MineDoor"
+		print(node_name)
 		var door_node = get_tree().current_scene.find_child(node_name, true, false)
 
-		if door_node and door_node.has_method("open_door"):
-			door_node.open_door()
+		if door_node and door_node.has_method("wall_dissappear"):
+			door_node.wall_dissappear()
 		else:
-			print("Warning: Door not found or doesn't have 'open_door':", node_name)
+			print("Warning: Door not found or doesn't have 'wall_dissappear':", node_name)
 
 #
 # TYPING EFFECT

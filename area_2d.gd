@@ -19,3 +19,12 @@ func _on_Area2D_body_entered(body: Node) -> void:
 
 		# Show the "Win" image
 		win_image.visible = true
+
+
+func _on_body_entered(body: Node2D) -> void:
+		if body.name == "Elon Pusk":  # Check if the player's name is Elon Pusk
+			# Play the sound
+			win_sound.play()
+
+			# Show the "Win" image
+			win_image.visible = true
