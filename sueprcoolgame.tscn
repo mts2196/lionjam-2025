@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://21dd7jmq3fjd"]
+[gd_scene load_steps=76 format=3 uid="uid://21dd7jmq3fjd"]
 
 [ext_resource type="Script" path="res://stats_ui.gd" id="1_raalm"]
 [ext_resource type="Texture2D" uid="uid://dllo67g7tjkg7" path="res://background/Bunk.png" id="1_yxj5i"]
 [ext_resource type="Texture2D" uid="uid://dytjyjfp8cs5q" path="res://background/command.png" id="2_1bpum"]
+[ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_yrhu8"]
 [ext_resource type="Texture2D" uid="uid://dgspbip4p2uk6" path="res://background/Kitchen.png" id="3_5dpcc"]
 [ext_resource type="Texture2D" uid="uid://kp6h0673ovp5" path="res://background/Lab.png" id="4_bkc3i"]
 [ext_resource type="Texture2D" uid="uid://ci7lqmg75t4ua" path="res://background/Map.png" id="5_dvodn"]
@@ -10,16 +11,296 @@
 [ext_resource type="Texture2D" uid="uid://d1pm8iq2bqclo" path="res://background/Mine.png" id="7_s6uq0"]
 [ext_resource type="Script" path="res://terminal.gd" id="8_pey6t"]
 [ext_resource type="PackedScene" uid="uid://chdvhwutlyvfm" path="res://terminal_root.tscn" id="9_4cctw"]
-[ext_resource type="Script" path="res://player.gd" id="9_7n80l"]
-[ext_resource type="Texture2D" uid="uid://bgc7o0craxnpt" path="res://Sprites/Sprites.png" id="10_gb75q"]
+[ext_resource type="Script" path="res://elon_pusk.gd" id="10_sx8v5"]
+[ext_resource type="Texture2D" uid="uid://dsocvnysvwyrv" path="res://Sprites/lionjam2.png" id="11_tmfci"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2ongl"]
+a = Vector2(346, 157)
+b = Vector2(288, 157)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lc8xf"]
+a = Vector2(385, 157)
+b = Vector2(444, 157)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ugftq"]
+a = Vector2(503, 157)
+b = Vector2(445, 157)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3i1la"]
+a = Vector2(602, 157)
+b = Vector2(541, 157)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x5h5f"]
+a = Vector2(195, 326)
+b = Vector2(52, 326)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_22d7c"]
+a = Vector2(788, 360)
+b = Vector2(647, 360)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yqai0"]
+a = Vector2(321, 551)
+b = Vector2(164, 551)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sml5s"]
+a = Vector2(648, 551)
+b = Vector2(490, 551)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0ewow"]
+a = Vector2(198, 269)
+b = Vector2(193, 268)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fl85a"]
+a = Vector2(647, 300)
+b = Vector2(640, 300)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pceed"]
+a = Vector2(223, 406)
+b = Vector2(197, 406)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4qlbi"]
+a = Vector2(263, 406)
+b = Vector2(551, 405)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m0y5o"]
+a = Vector2(643, 405)
+b = Vector2(592, 405)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ley33"]
+a = Vector2(444, 16)
+b = Vector2(444, 158)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dq8ur"]
+a = Vector2(602, 15)
+b = Vector2(602, 159)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7spiq"]
+a = Vector2(194, 169)
+b = Vector2(194, 229)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hfaq0"]
+a = Vector2(194, 268)
+b = Vector2(194, 327)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uk3hs"]
+a = Vector2(642, 161)
+b = Vector2(642, 260)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xdcjj"]
+a = Vector2(641, 300)
+b = Vector2(642, 408)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2j80p"]
+a = Vector2(788, 202)
+b = Vector2(788, 361)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tipla"]
+a = Vector2(321, 409)
+b = Vector2(321, 553)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kiqvx"]
+a = Vector2(648, 409)
+b = Vector2(648, 552)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rva77"]
+a = Vector2(385, 156)
+b = Vector2(386, 160)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5q14e"]
+a = Vector2(542, 156)
+b = Vector2(542, 161)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y2ijn"]
+a = Vector2(263, 405)
+b = Vector2(263, 410)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g3vc3"]
+a = Vector2(592, 404)
+b = Vector2(590, 410)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5ltyd"]
+a = Vector2(52, 169)
+b = Vector2(52, 327)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o24d0"]
+a = Vector2(287, 158)
+b = Vector2(287, 15)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vfnur"]
+a = Vector2(445, 15)
+b = Vector2(445, 158)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1q0dm"]
+a = Vector2(197, 160)
+b = Vector2(197, 228)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2juaf"]
+a = Vector2(196, 269)
+b = Vector2(197, 408)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_btw64"]
+a = Vector2(646, 203)
+b = Vector2(646, 260)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lb8sb"]
+a = Vector2(646, 300)
+b = Vector2(646, 361)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7585w"]
+a = Vector2(490, 410)
+b = Vector2(490, 553)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_658hd"]
+a = Vector2(163, 410)
+b = Vector2(163, 553)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_v2v53"]
+a = Vector2(345, 156)
+b = Vector2(345, 161)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gwlde"]
+a = Vector2(502, 156)
+b = Vector2(502, 159)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qdxq7"]
+a = Vector2(223, 410)
+b = Vector2(223, 405)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6bsfs"]
+a = Vector2(550, 404)
+b = Vector2(550, 410)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sxoky"]
+a = Vector2(195, 168)
+b = Vector2(51, 168)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u4xs3"]
+a = Vector2(286, 15)
+b = Vector2(603, 15)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o6wdj"]
+a = Vector2(193, 160)
+b = Vector2(345, 160)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h8p0y"]
+a = Vector2(502, 159)
+b = Vector2(385, 159)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_giis5"]
+a = Vector2(541, 160)
+b = Vector2(645, 161)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d5b7o"]
+a = Vector2(645, 202)
+b = Vector2(789, 202)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u8ho3"]
+a = Vector2(162, 409)
+b = Vector2(224, 409)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_anooa"]
+a = Vector2(262, 409)
+b = Vector2(322, 409)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8idli"]
+a = Vector2(489, 409)
+b = Vector2(551, 409)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pogt4"]
+a = Vector2(589, 409)
+b = Vector2(649, 409)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qw4r6"]
+a = Vector2(193, 228)
+b = Vector2(198, 228)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_01dja"]
+a = Vector2(641, 259)
+b = Vector2(647, 259)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6jya"]
+atlas = ExtResource("11_tmfci")
+region = Rect2(506, 730, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8cc0"]
+atlas = ExtResource("11_tmfci")
+region = Rect2(506, 170, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6jmi"]
+atlas = ExtResource("11_tmfci")
+region = Rect2(506, 450, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyd1c"]
+atlas = ExtResource("11_tmfci")
+region = Rect2(226, 170, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlw7y"]
+atlas = ExtResource("11_tmfci")
+region = Rect2(226, 450, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e5ip"]
+atlas = ExtResource("11_tmfci")
+region = Rect2(226, 730, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8m4w"]
+atlas = ExtResource("11_tmfci")
+region = Rect2(786, 450, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gab4v"]
+atlas = ExtResource("11_tmfci")
+region = Rect2(786, 170, 280, 280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffsrr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6jya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8cc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6jmi")
+}],
+"loop": true,
+"name": &"backward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyd1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlw7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e5ip")
+}],
+"loop": true,
+"name": &"forward",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8m4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gab4v")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16sar"]
+size = Vector2(14.5, 13.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu2jc"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7c82"]
-atlas = ExtResource("10_gb75q")
-region = Rect2(993, 369, 197, 200)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_02gmo"]
 
 [node name="Main" type="Node2D"]
 
@@ -60,28 +341,31 @@ layout_mode = 2
 
 [node name="Background" type="ColorRect" parent="Room"]
 custom_minimum_size = Vector2(800, 300)
-offset_left = -48.0
-offset_right = 752.0
+offset_right = 800.0
 offset_bottom = 567.0
 color = Color(0.544974, 0.544974, 0.544974, 1)
 
+[node name="Greenhouse" type="Sprite2D" parent="Room"]
+position = Vector2(420, 283)
+texture = ExtResource("2_yrhu8")
+
 [node name="Bunk" type="Sprite2D" parent="Room"]
-position = Vector2(259, 80)
+position = Vector2(366, 86.0002)
 rotation = 3.14159
 texture = ExtResource("1_yxj5i")
 
 [node name="Command" type="Sprite2D" parent="Room"]
-position = Vector2(619, 256)
+position = Vector2(717, 281)
 rotation = -1.5708
 texture = ExtResource("2_1bpum")
 
 [node name="Kitchen" type="Sprite2D" parent="Room"]
-position = Vector2(441, 80)
+position = Vector2(523, 86.0002)
 rotation = 3.14159
 texture = ExtResource("3_5dpcc")
 
 [node name="Lab" type="Sprite2D" parent="Room"]
-position = Vector2(261, 447)
+position = Vector2(242, 480)
 texture = ExtResource("4_bkc3i")
 
 [node name="Map" type="Sprite2D" parent="Room"]
@@ -91,20 +375,204 @@ scale = Vector2(0.104062, 0.09375)
 texture = ExtResource("5_dvodn")
 
 [node name="Med" type="Sprite2D" parent="Room"]
-position = Vector2(441, 447)
+position = Vector2(569, 480)
 texture = ExtResource("6_4yjrs")
 
 [node name="Mine" type="Sprite2D" parent="Room"]
-position = Vector2(79, 258)
+position = Vector2(121, 247)
 rotation = 1.5708
 texture = ExtResource("7_s6uq0")
 
-[node name="Terminal" type="Area2D" parent="Room"]
-position = Vector2(100, 150)
+[node name="bottom" type="StaticBody2D" parent="Room"]
+
+[node name="bottom1" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_2ongl")
+
+[node name="bottom2" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_lc8xf")
+
+[node name="bottom3" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_ugftq")
+
+[node name="bottom4" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_3i1la")
+
+[node name="bottom5" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_x5h5f")
+
+[node name="bottom6" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_22d7c")
+
+[node name="bottom7" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_yqai0")
+
+[node name="bottom8" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_sml5s")
+
+[node name="bottom9" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_0ewow")
+
+[node name="bottom10" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_fl85a")
+
+[node name="bottom11" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_pceed")
+
+[node name="bottom12" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_4qlbi")
+
+[node name="bottom13" type="CollisionShape2D" parent="Room/bottom" groups=["bottom_walls"]]
+shape = SubResource("SegmentShape2D_m0y5o")
+
+[node name="right" type="StaticBody2D" parent="Room"]
+
+[node name="right1" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_ley33")
+
+[node name="right2" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_dq8ur")
+
+[node name="right3" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_7spiq")
+
+[node name="right4" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_hfaq0")
+
+[node name="right5" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_uk3hs")
+
+[node name="right6" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_xdcjj")
+
+[node name="right7" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_2j80p")
+
+[node name="right8" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_tipla")
+
+[node name="right9" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_kiqvx")
+
+[node name="right10" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_rva77")
+
+[node name="right11" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_5q14e")
+
+[node name="right12" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_y2ijn")
+
+[node name="right13" type="CollisionShape2D" parent="Room/right" groups=["right_walls"]]
+shape = SubResource("SegmentShape2D_g3vc3")
+
+[node name="left" type="StaticBody2D" parent="Room"]
+
+[node name="left1" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_5ltyd")
+
+[node name="left2" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_o24d0")
+
+[node name="left3" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_vfnur")
+
+[node name="left4" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_1q0dm")
+
+[node name="left5" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_2juaf")
+
+[node name="left6" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_btw64")
+
+[node name="left7" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_lb8sb")
+
+[node name="left8" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_7585w")
+
+[node name="left9" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_658hd")
+
+[node name="left10" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_v2v53")
+
+[node name="left11" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_gwlde")
+
+[node name="left12" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_qdxq7")
+
+[node name="left13" type="CollisionShape2D" parent="Room/left" groups=["left_walls"]]
+shape = SubResource("SegmentShape2D_6bsfs")
+
+[node name="top" type="StaticBody2D" parent="Room"]
+
+[node name="top1" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_sxoky")
+
+[node name="top2" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_u4xs3")
+
+[node name="top3" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_o6wdj")
+
+[node name="top4" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_h8p0y")
+
+[node name="top5" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_giis5")
+
+[node name="top6" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_d5b7o")
+
+[node name="top7" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_u8ho3")
+
+[node name="top8" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_anooa")
+
+[node name="top9" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_8idli")
+
+[node name="top10" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_pogt4")
+
+[node name="top11" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_qw4r6")
+
+[node name="top12" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
+shape = SubResource("SegmentShape2D_01dja")
+
+[node name="Elon Pusk" type="CharacterBody2D" parent="."]
+script = ExtResource("10_sx8v5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elon Pusk"]
+position = Vector2(151, 192)
+scale = Vector2(0.0625095, 0.0591096)
+sprite_frames = SubResource("SpriteFrames_ffsrr")
+animation = &"right"
+
+[node name="Camera2D" type="Camera2D" parent="Elon Pusk"]
+position = Vector2(151, 192)
+zoom = Vector2(9, 8)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Elon Pusk"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Elon Pusk"]
+position = Vector2(151, 192)
+shape = SubResource("RectangleShape2D_16sar")
+
+[node name="TerminalNode" type="Node" parent="."]
+
+[node name="Terminal" type="Area2D" parent="TerminalNode"]
+position = Vector2(125, 180)
 script = ExtResource("8_pey6t")
 terminal_ui_scene = ExtResource("9_4cctw")
 
-[node name="ColorRect" type="ColorRect" parent="Room/Terminal"]
+[node name="ColorRect" type="ColorRect" parent="TerminalNode/Terminal"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -117,24 +585,12 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/Terminal"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/Terminal"]
 shape = SubResource("RectangleShape2D_lu2jc")
 
-[node name="Label" type="Label" parent="Room/Terminal"]
+[node name="Label" type="Label" parent="TerminalNode/Terminal"]
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(50, 50)
-script = ExtResource("9_7n80l")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(0.218274, 0.218274)
-texture = SubResource("AtlasTexture_p7c82")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-scale = Vector2(2.2, 2.2)
-shape = SubResource("RectangleShape2D_02gmo")
-
-[connection signal="body_entered" from="Room/Terminal" to="Room/Terminal" method="_on_body_entered"]
-[connection signal="body_exited" from="Room/Terminal" to="Room/Terminal" method="_on_body_exited"]
+[connection signal="body_entered" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_entered"]
+[connection signal="body_exited" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_exited"]
