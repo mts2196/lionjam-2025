@@ -199,22 +199,31 @@ func process_ai_response(ai_response: String):
 		if line.begins_with("Action:"):
 			action_text = line.replace("Action:", "").strip_edges()
 
-		#elif line.begins_with("Stats:"):
-			#var stats_json = line.replace("Stats:", "").strip_edges()
-			#print(stats_json)
-			## 2) Parse JSON & handle errors
-			#var stats_result = JSON.parse_string(stats_json)
-			#if stats_result.error == OK:
-				#var parsed_stats = stats_result.result
-				#if parsed_stats is Dictionary:
-					## e.g. { "integrity": -2, "oxygen": 5, ... }
-					#stats_change = parsed_stats
-				#else:
-					#print("Warning: Stats is not a Dictionary. Not updating stats.")
-			#else:
-				#print("Warning: AI returned invalid JSON for stats. Error:", stats_result.error_string())
-				#print("Stats line was:", stats_json)
-				## If parse fails, do not update station stats
+		elif line.begins_with("Stats:"):
+			print(stats_change)
+			var stat_text = line.split(",")
+			for stat in stat_text:
+				stat = stat.strip_edges()
+	
+			# Find the key-value pairs
+				if stat.begins_with('"integrity"'):
+					var value = stat.split(":")[1].strip_edges().replace('"', '')
+					stats_change["integrity"] = int(value)
+
+				elif stat.begins_with('"oxygen"'):
+					var value = stat.split(":")[1].strip_edges().replace('"', '')
+					stats_change["oxygen"] = int(value)
+
+				elif stat.begins_with('"power"'):
+					var value = stat.split(":")[1].strip_edges().replace('"', '')
+					stats_change["power"] = int(value)
+
+				elif stat.begins_with('"growth"'):
+					var value = stat.split(":")[1].strip_edges().replace('"', '')
+					stats_change["growth"] = int(value)
+
+			# Output to check the result
+			print(stats_change)
 
 		elif line.begins_with("Environment:"):
 			environment_text = line.replace("Environment:", "").strip_edges()
