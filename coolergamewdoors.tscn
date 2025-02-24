@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://bpg4wjq4navo2"]
+[gd_scene load_steps=89 format=3 uid="uid://bpg4wjq4navo2"]
 
 [ext_resource type="Script" path="res://stats_ui.gd" id="1_dm4c8"]
 [ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_w5f2g"]
@@ -21,6 +21,8 @@
 [ext_resource type="Script" path="res://static_body_2d_4.gd" id="16_arf1i"]
 [ext_resource type="Script" path="res://static_body_2d_5.gd" id="17_qqwbm"]
 [ext_resource type="Script" path="res://static_body_2d_6.gd" id="18_iqvk7"]
+[ext_resource type="AudioStream" uid="uid://chb0ny5axrcqs" path="res://lionjamfoot.mp3" id="20_0cr4i"]
+[ext_resource type="AudioStream" uid="uid://cyqv5t6o86vv2" path="res://lionjamMusic.mp3" id="20_8r5pr"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2ongl"]
 a = Vector2(346, 157)
@@ -285,7 +287,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"backward",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -299,7 +301,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"forward",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -310,7 +312,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -321,7 +323,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"right",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qr1q"]
@@ -689,11 +691,17 @@ texture = ExtResource("11_2dkjr")
 [node name="Elon Pusk" type="CharacterBody2D" parent="."]
 script = ExtResource("12_gt27u")
 
+[node name="walking" type="AudioStreamPlayer2D" parent="Elon Pusk"]
+stream = ExtResource("20_0cr4i")
+volume_db = 5.5
+playback_type = 1
+parameters/looping = false
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elon Pusk"]
 position = Vector2(153.751, 193.275)
 scale = Vector2(0.11251, 0.10911)
 sprite_frames = SubResource("SpriteFrames_u7vfl")
-animation = &"right"
+animation = &"backward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elon Pusk"]
 position = Vector2(154.125, 193)
@@ -707,6 +715,10 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Elon Pusk"]
+
+[node name="backmusic" type="AudioStreamPlayer2D" parent="Elon Pusk"]
+stream = ExtResource("20_8r5pr")
+volume_db = -5.448
 
 [connection signal="body_entered" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_entered"]
 [connection signal="body_exited" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_exited"]
