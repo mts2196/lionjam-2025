@@ -1,0 +1,170 @@
+[gd_scene load_steps=20 format=3 uid="uid://bpsnloiqevqh3"]
+
+[ext_resource type="Script" path="res://terminal.gd" id="2_oxkpj"]
+[ext_resource type="PackedScene" uid="uid://chdvhwutlyvfm" path="res://terminal_root.tscn" id="3_0s27o"]
+[ext_resource type="Script" path="res://elon_pusk.gd" id="4_mrcy6"]
+[ext_resource type="Texture2D" uid="uid://dsocvnysvwyrv" path="res://Sprites/lionjam2.png" id="5_3r42r"]
+[ext_resource type="Texture2D" uid="uid://b4v2yvdo3r6lq" path="res://Sprites/lionjam3.png" id="6_4q1r5"]
+
+[sub_resource type="GDScript" id="GDScript_i13tw"]
+script/source = "extends Node2D
+
+@export var ai_name: String = \"hydroponics\"  # or \"security\", etc.
+
+func _ready():
+	# Optional: If you want to label the terminal (e.g. show a name)
+	pass
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8cc0"]
+atlas = ExtResource("5_3r42r")
+region = Rect2(506, 170, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6jya"]
+atlas = ExtResource("5_3r42r")
+region = Rect2(506, 730, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6jmi"]
+atlas = ExtResource("5_3r42r")
+region = Rect2(506, 450, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyd1c"]
+atlas = ExtResource("5_3r42r")
+region = Rect2(226, 170, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlw7y"]
+atlas = ExtResource("5_3r42r")
+region = Rect2(226, 450, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e5ip"]
+atlas = ExtResource("5_3r42r")
+region = Rect2(226, 730, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1glwa"]
+atlas = ExtResource("6_4q1r5")
+region = Rect2(226, 170, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75m5v"]
+atlas = ExtResource("6_4q1r5")
+region = Rect2(226, 450, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gab4v"]
+atlas = ExtResource("5_3r42r")
+region = Rect2(786, 170, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8m4w"]
+atlas = ExtResource("5_3r42r")
+region = Rect2(786, 450, 280, 280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wgben"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8cc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6jya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6jmi")
+}],
+"loop": true,
+"name": &"backward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyd1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlw7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e5ip")
+}],
+"loop": true,
+"name": &"forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1glwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75m5v")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gab4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8m4w")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aduot"]
+radius = 113.777
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h8uw"]
+
+[node name="AI_Terminal" type="Node2D"]
+script = SubResource("GDScript_i13tw")
+
+[node name="Elon Pusk" type="CharacterBody2D" parent="."]
+script = ExtResource("4_mrcy6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elon Pusk"]
+position = Vector2(151, 191)
+scale = Vector2(0.132162, 0.125362)
+sprite_frames = SubResource("SpriteFrames_wgben")
+animation = &"right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elon Pusk"]
+position = Vector2(150, 193)
+scale = Vector2(0.132162, 0.125362)
+shape = SubResource("CircleShape2D_aduot")
+
+[node name="Camera2D" type="Camera2D" parent="Elon Pusk"]
+position = Vector2(151, 192)
+zoom = Vector2(9, 8)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Elon Pusk"]
+
+[node name="TerminalNode" type="Node" parent="."]
+
+[node name="Terminal" type="Area2D" parent="TerminalNode"]
+position = Vector2(125, 180)
+script = ExtResource("2_oxkpj")
+terminal_ui_scene = ExtResource("3_0s27o")
+
+[node name="ColorRect" type="ColorRect" parent="TerminalNode/Terminal"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/Terminal"]
+shape = SubResource("RectangleShape2D_2h8uw")
+
+[node name="Label" type="Label" parent="TerminalNode/Terminal"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_entered"]
+[connection signal="body_exited" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_exited"]
