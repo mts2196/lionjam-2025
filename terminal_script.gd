@@ -113,13 +113,13 @@ func build_prompt(
 	) -> String:
 	
 	# The improved prompt so the AI *always* gives a "Response:" line
-	var prompt = "You are %s, originally a human trapped on a space station overrun by plant life. " + \
+	var prompt = "You are " + target_ai_name + ", originally a human trapped on a space station overrun by plant life. " + \
 	"Over time, the plants have grown into and merged with your body, leaving you partially human " + \
-	"and partially plant. You are compelled to fulfill the plant mass’s will.\n\n" % target_ai_name
+	"and partially plant. You are compelled to fulfill the plant mass’s will.\n\n" 
 
-	prompt += "Your role and responsibilities:\n%s\n\n" % responsibilities
-	prompt += "Current station statistics:\n%s\n\n" % station_stats_str
-	prompt += "History of events so far:\n%s\n\n" % events_log
+	prompt += "Your role and responsibilities:\n" + responsibilities + "\n\n"
+	prompt += "Current station statistics:\n" + station_stats_str + "\n\n"
+	prompt += "History of events so far:\n" + events_log + "\n\n"
 	prompt += "You will be asked to perform certain actions by the player (a human moving freely around the station).\n\n"
 	prompt += "First, decide whether you will take any action. If you do, specify how it affects the station’s stats, " + \
 			  "the environment, and the player. If you choose not to act, you must still provide a “Response” line " + \
@@ -129,11 +129,11 @@ func build_prompt(
 
 	prompt += "Format your answer exactly as follows:\n"
 	prompt += "Action: <Describe any action you take, or “No action.”>\n"
-	prompt += "Stats: {integrity: <int>, oxygen: <int>, power: <int>, growth: <int>}\n"
+	prompt += "Stats: {\"integrity\": \"<int>\", \"oxygen\": \"<int>\", \"power\": \"<int>\", \"growth\": \"<int>\"} (ENSURE THIS IS FORMATTED AS JSON)\n"
 	prompt += "Environment: <Describe changes to the environment, or “No change.”>\n"
 	prompt += "Player: <Describe how this affects the player, or “No change.”>\n"
-	prompt += "Response: <Short in-character message to the player, even if no action is taken.>\n\n"
-	prompt += "Doors: <CHOOSE ANY OR NONE: Mine, Electric, Hangar, Command, Medbay>"
+	prompt += "Response: <Short in-character message to the player, even if no action is taken.>\n"
+	prompt += "Doors: <CHOOSE ANY OR NONE: Mine, Electric, Hangar, Command, Medbay>\n\n"
 
 	prompt += "Here is the latest conversation from the player:\n"
 	prompt += conversation_log + "\n\n"
@@ -142,6 +142,7 @@ func build_prompt(
 	# Optionally, you might want to highlight the new user input:
 	# prompt += "Most recent user message: %s\n" % user_input
 
+	print(prompt)
 	return prompt
 
 
@@ -172,9 +173,8 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 # OPTIONAL: PROCESS AI RESPONSE
 # If you still want to parse out Action, Stats, etc., adapt from your existing code.
 #
-func process_ai_response(ai_response: String) -> String:
-	# 1) LOG the entire response
-	print("AI raw response:\n", ai_response)
+func process_ai_response(ai_response: String):
+	print("AI raw response:\n", ai_response)  # 1) Log the entire AI response
 
 	var action_text = ""
 	var environment_text = ""
@@ -190,19 +190,30 @@ func process_ai_response(ai_response: String) -> String:
 		"growth": 0
 	}
 
-	# 2) Split the AI's response by lines and parse each section
+	# Split the AI's response by lines
 	var lines = ai_response.split("\n")
 	for line in lines:
 		line = line.strip_edges()
-
+		
 		if line.begins_with("Action:"):
 			action_text = line.replace("Action:", "").strip_edges()
 
-		elif line.begins_with("Stats:"):
-			var stats_json = line.replace("Stats:", "").strip_edges()
-			var parsed_stats = JSON.parse_string(stats_json)
-			if parsed_stats and parsed_stats is Dictionary:
-				stats_change = parsed_stats
+		#elif line.begins_with("Stats:"):
+			#var stats_json = line.replace("Stats:", "").strip_edges()
+			#print(stats_json)
+			## 2) Parse JSON & handle errors
+			#var stats_result = JSON.parse_string(stats_json)
+			#if stats_result.error == OK:
+				#var parsed_stats = stats_result.result
+				#if parsed_stats is Dictionary:
+					## e.g. { "integrity": -2, "oxygen": 5, ... }
+					#stats_change = parsed_stats
+				#else:
+					#print("Warning: Stats is not a Dictionary. Not updating stats.")
+			#else:
+				#print("Warning: AI returned invalid JSON for stats. Error:", stats_result.error_string())
+				#print("Stats line was:", stats_json)
+				## If parse fails, do not update station stats
 
 		elif line.begins_with("Environment:"):
 			environment_text = line.replace("Environment:", "").strip_edges()
@@ -216,25 +227,23 @@ func process_ai_response(ai_response: String) -> String:
 		elif line.begins_with("Response:"):
 			response_text = line.replace("Response:", "").strip_edges()
 
-	# 3) Update station stats
+	# 3) Update station stats with stats_change
 	update_station_stats(stats_change)
 
-	## 4) Handle door openings (if Doors line was included)
-	#if doors_text != "":
-		#open_doors(doors_text)
+	# 4) Handle doors
+	if doors_text != "":
+		open_doors(doors_text)
+	
+	# 5) Optionally do something with action_text, environment_text, etc.
 
-	# 5) (Optional) If you want to do something with action_text, environment_text, or player_effect_text, do so here.
-	# e.g., logging, environment changes, showing player effect, etc.
-
-	# Return only the final text from "Response:" to print to the player
+	# 6) Return only the final "Response:" text for the player to see
 	return response_text
 
 
-func update_station_stats(stats_change: Dictionary):
-	# Example: find "StatsUI" in the scene
+func update_station_stats(stats_change: Dictionary) -> void:
+	# Example: find a "StatsUI" node and use `modify_stats`
 	var stats_ui = get_tree().current_scene.find_child("StatsUI", true, false)
 	if stats_ui and stats_ui.has_method("modify_stats"):
-		# Convert each stat from the dictionary, falling back to 0 if missing
 		stats_ui.modify_stats(
 			stats_change.get("integrity", 0),
 			stats_change.get("oxygen", 0),
@@ -242,6 +251,31 @@ func update_station_stats(stats_change: Dictionary):
 			stats_change.get("growth", 0)
 		)
 
+func open_doors(doors_line: String) -> void:
+	# e.g. "Mine, Electric, Hangar" or "No doors opened."
+	var doors_text_lower = doors_line.to_lower()
+	if doors_text_lower == "no doors opened." or doors_text_lower == "no doors opened":
+		print("AI decided not to open any doors.")
+		return
+
+	# Split by commas
+	var doors_array = doors_line.split(",")
+	for i in range(doors_array.size()):
+		doors_array[i] = doors_array[i].strip_edges()
+
+	# For each door, attempt to "open" it
+	for door_name in doors_array:
+		print("AI is opening door:", door_name)
+
+		# Example: If your door nodes are named "MineDoor", "ElectricDoor", etc.
+		# We'll just do a find_child() for demonstration. Adjust to your real scene setup.
+		var node_name = door_name.capitalize() + "Door"  # e.g. "MineDoor"
+		var door_node = get_tree().current_scene.find_child(node_name, true, false)
+
+		if door_node and door_node.has_method("open_door"):
+			door_node.open_door()
+		else:
+			print("Warning: Door not found or doesn't have 'open_door':", node_name)
 
 #
 # TYPING EFFECT
