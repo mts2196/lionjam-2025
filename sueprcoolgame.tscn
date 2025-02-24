@@ -1,12 +1,22 @@
-[gd_scene load_steps=74 format=3 uid="uid://21dd7jmq3fjd"]
+[gd_scene load_steps=84 format=3 uid="uid://21dd7jmq3fjd"]
 
 [ext_resource type="Script" path="res://stats_ui.gd" id="1_raalm"]
 [ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_yrhu8"]
+[ext_resource type="Texture2D" uid="uid://8l48ugbijeda" path="res://background/Plant.png" id="3_ot4it"]
 [ext_resource type="Texture2D" uid="uid://cc54wp8lvaepx" path="res://background/Bunk copy.png" id="4_jkm6h"]
+[ext_resource type="Texture2D" uid="uid://dujyglul3vhfs" path="res://background/abjects/box.png" id="4_u1f8v"]
 [ext_resource type="Texture2D" uid="uid://ci7lqmg75t4ua" path="res://background/Map.png" id="5_dvodn"]
+[ext_resource type="Texture2D" uid="uid://c6m23i7mt4yju" path="res://background/abjects/control.png" id="5_ywuro"]
+[ext_resource type="Texture2D" uid="uid://ccm7bfvwsmfpy" path="res://background/abjects/electric.png" id="6_rahnb"]
+[ext_resource type="Texture2D" uid="uid://bf4vwnqua0tgi" path="res://background/abjects/forklift.png" id="7_h3wtb"]
+[ext_resource type="Texture2D" uid="uid://bcv17gv57ww0b" path="res://background/abjects/med.png" id="8_dl4oe"]
 [ext_resource type="Script" path="res://terminal.gd" id="8_pey6t"]
 [ext_resource type="PackedScene" uid="uid://chdvhwutlyvfm" path="res://terminal_root.tscn" id="9_4cctw"]
+[ext_resource type="Texture2D" uid="uid://dfe4tp0etl0vw" path="res://background/abjects/shelf.png" id="9_ne7bf"]
+[ext_resource type="Texture2D" uid="uid://b423o05w4t5su" path="res://background/Untitled 02-23-2025 10-08-37.png" id="10_6c2aw"]
+[ext_resource type="Texture2D" uid="uid://cwkjqwyslobx3" path="res://background/abjects/sleeppod.png" id="10_e75l2"]
 [ext_resource type="Script" path="res://elon_pusk.gd" id="10_sx8v5"]
+[ext_resource type="Texture2D" uid="uid://716v3jaqjxxd" path="res://background/abjects/tv.png" id="11_gog4r"]
 [ext_resource type="Texture2D" uid="uid://dsocvnysvwyrv" path="res://Sprites/lionjam2.png" id="11_tmfci"]
 [ext_resource type="Texture2D" uid="uid://b4v2yvdo3r6lq" path="res://Sprites/lionjam3.png" id="14_wqa3i"]
 
@@ -347,6 +357,90 @@ layout_mode = 2
 [node name="GrowthLabel" type="Label" parent="UI/StatsUI/VBoxContainer"]
 layout_mode = 2
 
+[node name="objects" type="Node" parent="."]
+
+[node name="drill" type="Sprite2D" parent="objects"]
+position = Vector2(210, 109)
+scale = Vector2(4.91, 4.1)
+texture = ExtResource("10_6c2aw")
+
+[node name="Plant" type="Sprite2D" parent="objects"]
+position = Vector2(200, 280)
+scale = Vector2(2.95, 2.56)
+texture = ExtResource("3_ot4it")
+
+[node name="Box" type="Sprite2D" parent="objects"]
+position = Vector2(250, 60)
+scale = Vector2(1.46, 1.32)
+texture = ExtResource("4_u1f8v")
+
+[node name="Control" type="Sprite2D" parent="objects"]
+position = Vector2(746, 290)
+scale = Vector2(2.22, 4)
+texture = ExtResource("5_ywuro")
+
+[node name="Electric" type="Sprite2D" parent="objects"]
+position = Vector2(400, 70)
+scale = Vector2(1.46, 1.7)
+texture = ExtResource("6_rahnb")
+
+[node name="Forklift" type="Sprite2D" parent="objects"]
+position = Vector2(560, 110)
+scale = Vector2(1.9, 2.66)
+texture = ExtResource("7_h3wtb")
+
+[node name="Med" type="Sprite2D" parent="objects"]
+position = Vector2(200, 500)
+scale = Vector2(2.18, 2.56)
+texture = ExtResource("8_dl4oe")
+
+[node name="Shelf" type="Sprite2D" parent="objects"]
+position = Vector2(550, 56)
+scale = Vector2(2.43, 2.32)
+texture = ExtResource("9_ne7bf")
+
+[node name="Sleeppod" type="Sprite2D" parent="objects"]
+position = Vector2(620, 450)
+scale = Vector2(1.42, 1.7)
+texture = ExtResource("10_e75l2")
+
+[node name="Tv" type="Sprite2D" parent="objects"]
+position = Vector2(700, 230)
+scale = Vector2(2.98, 1.92)
+texture = ExtResource("11_gog4r")
+
+[node name="Shelf2" type="Sprite2D" parent="objects"]
+position = Vector2(480, 56)
+scale = Vector2(2.43, 2.32)
+texture = ExtResource("9_ne7bf")
+
+[node name="Electric2" type="Sprite2D" parent="objects"]
+position = Vector2(360, 70)
+scale = Vector2(1.46, 1.7)
+texture = ExtResource("6_rahnb")
+
+[node name="Electric3" type="Sprite2D" parent="objects"]
+position = Vector2(320, 70)
+scale = Vector2(1.46, 1.7)
+texture = ExtResource("6_rahnb")
+
+[node name="Box2" type="Sprite2D" parent="objects"]
+position = Vector2(200, 40)
+scale = Vector2(1.46, 1.32)
+texture = ExtResource("4_u1f8v")
+
+[node name="Plant2" type="Sprite2D" parent="objects"]
+position = Vector2(60, 280)
+rotation = -2.1869
+scale = Vector2(2.62, 2.274)
+texture = ExtResource("3_ot4it")
+
+[node name="Plant3" type="Sprite2D" parent="objects"]
+position = Vector2(150, 310)
+rotation = 1.5708
+scale = Vector2(2.95, 2.56)
+texture = ExtResource("3_ot4it")
+
 [node name="Room" type="Node2D" parent="."]
 
 [node name="Background" type="ColorRect" parent="Room"]
@@ -562,47 +656,47 @@ shape = SubResource("SegmentShape2D_qw4r6")
 shape = SubResource("SegmentShape2D_01dja")
 
 [node name="bunk" type="Label" parent="Room"]
-offset_left = 548.0
-offset_top = 467.0
-offset_right = 629.0
-offset_bottom = 512.0
+offset_left = 540.0
+offset_top = 420.0
+offset_right = 621.0
+offset_bottom = 465.0
 text = "BUNK"
 
 [node name="hander" type="Label" parent="Room"]
-offset_left = 492.0
-offset_top = 70.0
-offset_right = 559.0
-offset_bottom = 93.0
+offset_left = 486.0
+offset_top = 128.0
+offset_right = 553.0
+offset_bottom = 151.0
 text = "HANGER"
 
 [node name="mine" type="Label" parent="Room"]
-offset_left = 105.0
-offset_top = 232.0
-offset_right = 147.0
-offset_bottom = 255.0
+offset_left = 137.0
+offset_top = 236.0
+offset_right = 179.0
+offset_bottom = 259.0
 text = "MINE"
 
 [node name="command" type="Label" parent="Room"]
-offset_left = 676.0
-offset_top = 267.0
-offset_right = 764.0
-offset_bottom = 290.0
+offset_left = 661.0
+offset_top = 268.0
+offset_right = 749.0
+offset_bottom = 291.0
 text = "COMMAND
 "
 
 [node name="medbay" type="Label" parent="Room"]
-offset_left = 212.0
-offset_top = 467.0
-offset_right = 283.0
-offset_bottom = 490.0
+offset_left = 209.0
+offset_top = 420.0
+offset_right = 280.0
+offset_bottom = 443.0
 text = "MED BAY
 "
 
 [node name="Label6" type="Label" parent="Room"]
-offset_left = 326.0
-offset_top = 74.0
-offset_right = 418.0
-offset_bottom = 97.0
+offset_left = 323.0
+offset_top = 117.0
+offset_right = 415.0
+offset_bottom = 140.0
 text = "ELECTRIC"
 
 [node name="TerminalNode" type="Node" parent="."]
