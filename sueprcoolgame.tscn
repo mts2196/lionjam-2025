@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://21dd7jmq3fjd"]
+[gd_scene load_steps=90 format=3 uid="uid://21dd7jmq3fjd"]
 
 [ext_resource type="Script" path="res://stats_ui.gd" id="1_raalm"]
 [ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_yrhu8"]
@@ -17,7 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://716v3jaqjxxd" path="res://background/abjects/tv.png" id="11_gog4r"]
 [ext_resource type="Texture2D" uid="uid://dsocvnysvwyrv" path="res://Sprites/lionjam2.png" id="11_tmfci"]
 [ext_resource type="Texture2D" uid="uid://b4v2yvdo3r6lq" path="res://Sprites/lionjam3.png" id="14_wqa3i"]
+[ext_resource type="Script" path="res://static_body_2d_6.gd" id="15_xcbt5"]
+[ext_resource type="Texture2D" uid="uid://cww6gay8lcira" path="res://Sprites/lionjam5.png" id="16_lxxbq"]
+[ext_resource type="Script" path="res://static_body_2d_5.gd" id="17_jv2be"]
+[ext_resource type="Script" path="res://static_body_2d_4.gd" id="18_bw7uk"]
+[ext_resource type="Script" path="res://static_body_2d_3.gd" id="19_8r2tj"]
 [ext_resource type="Texture2D" uid="uid://ddlebx2avtpcm" path="res://Sprites/lionjam4.png" id="20_j7hmt"]
+[ext_resource type="Script" path="res://static_body_2d.gd" id="20_lve7b"]
+[ext_resource type="Script" path="res://static_body_2d_2.gd" id="21_vxpgb"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2ongl"]
 a = Vector2(346, 157)
@@ -222,6 +229,9 @@ b = Vector2(198, 228)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_01dja"]
 a = Vector2(641, 259)
 b = Vector2(647, 259)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkh34"]
+size = Vector2(7.2072, 32.4324)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8cc0"]
 atlas = ExtResource("11_tmfci")
@@ -696,29 +706,115 @@ offset_right = 402.0
 offset_bottom = 146.0
 text = "ELECTRIC"
 
+[node name="doors" type="Node" parent="."]
+
+[node name="bunkDoor" type="StaticBody2D" parent="doors"]
+script = ExtResource("15_xcbt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/bunkDoor"]
+position = Vector2(570.061, 407.696)
+rotation = 1.5708
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_kkh34")
+
+[node name="Sprite2D" type="Sprite2D" parent="doors/bunkDoor"]
+position = Vector2(570.061, 407.77)
+scale = Vector2(-0.0451534, -0.0127381)
+texture = ExtResource("16_lxxbq")
+
+[node name="medDoor" type="StaticBody2D" parent="doors"]
+script = ExtResource("17_jv2be")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/medDoor"]
+position = Vector2(243.061, 407.696)
+rotation = 1.5708
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_kkh34")
+
+[node name="Sprite2D" type="Sprite2D" parent="doors/medDoor"]
+position = Vector2(243.061, 407.77)
+scale = Vector2(-0.0451534, -0.0127381)
+texture = ExtResource("16_lxxbq")
+
+[node name="electricDoor" type="StaticBody2D" parent="doors"]
+script = ExtResource("18_bw7uk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/electricDoor"]
+position = Vector2(365.061, 156.696)
+rotation = 1.5708
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_kkh34")
+
+[node name="Sprite2D" type="Sprite2D" parent="doors/electricDoor"]
+position = Vector2(365.061, 156.77)
+scale = Vector2(-0.0451534, -0.0127381)
+texture = ExtResource("16_lxxbq")
+
+[node name="hangerDoor" type="StaticBody2D" parent="doors"]
+script = ExtResource("19_8r2tj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/hangerDoor"]
+position = Vector2(522.061, 156.696)
+rotation = 1.5708
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_kkh34")
+
+[node name="Sprite2D" type="Sprite2D" parent="doors/hangerDoor"]
+position = Vector2(522.061, 156.77)
+scale = Vector2(-0.0451534, -0.0127381)
+texture = ExtResource("16_lxxbq")
+
+[node name="minedDoor" type="StaticBody2D" parent="doors"]
+script = ExtResource("20_lve7b")
+
+[node name="Sprite2D" type="Sprite2D" parent="doors/minedDoor"]
+position = Vector2(195, 248.074)
+rotation = -1.5708
+scale = Vector2(0.0451534, 0.0127381)
+texture = ExtResource("16_lxxbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/minedDoor"]
+position = Vector2(195, 248)
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_kkh34")
+
+[node name="commandDoor" type="StaticBody2D" parent="doors"]
+script = ExtResource("21_vxpgb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/commandDoor"]
+position = Vector2(644.771, 278.987)
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_kkh34")
+
+[node name="Sprite2D" type="Sprite2D" parent="doors/commandDoor"]
+position = Vector2(644.771, 279.061)
+rotation = 1.5708
+scale = Vector2(-0.0451534, -0.0127381)
+texture = ExtResource("16_lxxbq")
+
 [node name="TerminalNode" type="Node" parent="."]
 
-[node name="mineTerminal" type="Sprite2D" parent="."]
+[node name="mineTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(87, 195)
 texture = ExtResource("20_j7hmt")
 
-[node name="medTerminal" type="Sprite2D" parent="."]
+[node name="medTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(287, 506)
 texture = ExtResource("20_j7hmt")
 
-[node name="bunkTerminal" type="Sprite2D" parent="."]
+[node name="bunkTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(527, 504)
 texture = ExtResource("20_j7hmt")
 
-[node name="commandTerminal" type="Sprite2D" parent="."]
+[node name="commandTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(751, 323)
 texture = ExtResource("20_j7hmt")
 
-[node name="hangerTerminal" type="Sprite2D" parent="."]
+[node name="hangerTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(481, 104)
 texture = ExtResource("20_j7hmt")
 
-[node name="electricTerminal" type="Sprite2D" parent="."]
+[node name="electricTerminal" type="Sprite2D" parent="TerminalNode"]
 position = Vector2(415, 116)
 texture = ExtResource("20_j7hmt")
 
