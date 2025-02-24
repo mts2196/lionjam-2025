@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://21dd7jmq3fjd"]
+[gd_scene load_steps=82 format=3 uid="uid://21dd7jmq3fjd"]
 
 [ext_resource type="Script" path="res://stats_ui.gd" id="1_raalm"]
 [ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_yrhu8"]
@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ccm7bfvwsmfpy" path="res://background/abjects/electric.png" id="6_rahnb"]
 [ext_resource type="Texture2D" uid="uid://bf4vwnqua0tgi" path="res://background/abjects/forklift.png" id="7_h3wtb"]
 [ext_resource type="Texture2D" uid="uid://bcv17gv57ww0b" path="res://background/abjects/med.png" id="8_dl4oe"]
-[ext_resource type="Script" path="res://terminal.gd" id="8_pey6t"]
-[ext_resource type="PackedScene" uid="uid://chdvhwutlyvfm" path="res://terminal_root.tscn" id="9_4cctw"]
 [ext_resource type="Texture2D" uid="uid://dfe4tp0etl0vw" path="res://background/abjects/shelf.png" id="9_ne7bf"]
 [ext_resource type="Texture2D" uid="uid://b423o05w4t5su" path="res://background/Untitled 02-23-2025 10-08-37.png" id="10_6c2aw"]
 [ext_resource type="Texture2D" uid="uid://cwkjqwyslobx3" path="res://background/abjects/sleeppod.png" id="10_e75l2"]
@@ -225,8 +223,6 @@ b = Vector2(198, 228)
 a = Vector2(641, 259)
 b = Vector2(647, 259)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu2jc"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8cc0"]
 atlas = ExtResource("11_tmfci")
 region = Rect2(506, 170, 280, 280)
@@ -267,7 +263,7 @@ region = Rect2(786, 170, 280, 280)
 atlas = ExtResource("11_tmfci")
 region = Rect2(786, 450, 280, 280)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_u7vfl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ouse"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -320,8 +316,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ivmby"]
-radius = 113.777
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05y4h"]
+size = Vector2(226.994, 223.353)
 
 [node name="Main" type="Node2D"]
 
@@ -358,91 +354,91 @@ layout_mode = 2
 [node name="GrowthLabel" type="Label" parent="UI/StatsUI/VBoxContainer"]
 layout_mode = 2
 
-[node name="objects" type="Node" parent="."]
+[node name="Room" type="Node2D" parent="."]
 
-[node name="drill" type="Sprite2D" parent="objects"]
+[node name="objects" type="Node" parent="Room"]
+
+[node name="drill" type="Sprite2D" parent="Room/objects"]
 position = Vector2(210, 109)
 scale = Vector2(4.91, 4.1)
 texture = ExtResource("10_6c2aw")
 
-[node name="Plant" type="Sprite2D" parent="objects"]
+[node name="Plant" type="Sprite2D" parent="Room/objects"]
 position = Vector2(200, 280)
 scale = Vector2(2.95, 2.56)
 texture = ExtResource("3_ot4it")
 
-[node name="Box" type="Sprite2D" parent="objects"]
+[node name="Box" type="Sprite2D" parent="Room/objects"]
 position = Vector2(250, 60)
 scale = Vector2(1.46, 1.32)
 texture = ExtResource("4_u1f8v")
 
-[node name="Control" type="Sprite2D" parent="objects"]
+[node name="Control" type="Sprite2D" parent="Room/objects"]
 position = Vector2(746, 290)
 scale = Vector2(2.22, 4)
 texture = ExtResource("5_ywuro")
 
-[node name="Electric" type="Sprite2D" parent="objects"]
+[node name="Electric" type="Sprite2D" parent="Room/objects"]
 position = Vector2(400, 70)
 scale = Vector2(1.46, 1.7)
 texture = ExtResource("6_rahnb")
 
-[node name="Forklift" type="Sprite2D" parent="objects"]
+[node name="Forklift" type="Sprite2D" parent="Room/objects"]
 position = Vector2(560, 110)
 scale = Vector2(1.9, 2.66)
 texture = ExtResource("7_h3wtb")
 
-[node name="Med" type="Sprite2D" parent="objects"]
+[node name="Med" type="Sprite2D" parent="Room/objects"]
 position = Vector2(200, 500)
 scale = Vector2(2.18, 2.56)
 texture = ExtResource("8_dl4oe")
 
-[node name="Shelf" type="Sprite2D" parent="objects"]
+[node name="Shelf" type="Sprite2D" parent="Room/objects"]
 position = Vector2(550, 56)
 scale = Vector2(2.43, 2.32)
 texture = ExtResource("9_ne7bf")
 
-[node name="Sleeppod" type="Sprite2D" parent="objects"]
+[node name="Sleeppod" type="Sprite2D" parent="Room/objects"]
 position = Vector2(620, 450)
 scale = Vector2(1.42, 1.7)
 texture = ExtResource("10_e75l2")
 
-[node name="Tv" type="Sprite2D" parent="objects"]
+[node name="Tv" type="Sprite2D" parent="Room/objects"]
 position = Vector2(700, 230)
 scale = Vector2(2.98, 1.92)
 texture = ExtResource("11_gog4r")
 
-[node name="Shelf2" type="Sprite2D" parent="objects"]
+[node name="Shelf2" type="Sprite2D" parent="Room/objects"]
 position = Vector2(480, 56)
 scale = Vector2(2.43, 2.32)
 texture = ExtResource("9_ne7bf")
 
-[node name="Electric2" type="Sprite2D" parent="objects"]
+[node name="Electric2" type="Sprite2D" parent="Room/objects"]
 position = Vector2(360, 70)
 scale = Vector2(1.46, 1.7)
 texture = ExtResource("6_rahnb")
 
-[node name="Electric3" type="Sprite2D" parent="objects"]
+[node name="Electric3" type="Sprite2D" parent="Room/objects"]
 position = Vector2(320, 70)
 scale = Vector2(1.46, 1.7)
 texture = ExtResource("6_rahnb")
 
-[node name="Box2" type="Sprite2D" parent="objects"]
+[node name="Box2" type="Sprite2D" parent="Room/objects"]
 position = Vector2(200, 40)
 scale = Vector2(1.46, 1.32)
 texture = ExtResource("4_u1f8v")
 
-[node name="Plant2" type="Sprite2D" parent="objects"]
+[node name="Plant2" type="Sprite2D" parent="Room/objects"]
 position = Vector2(60, 280)
 rotation = -2.1869
 scale = Vector2(2.62, 2.274)
 texture = ExtResource("3_ot4it")
 
-[node name="Plant3" type="Sprite2D" parent="objects"]
+[node name="Plant3" type="Sprite2D" parent="Room/objects"]
 position = Vector2(150, 310)
 rotation = 1.5708
 scale = Vector2(2.95, 2.56)
 texture = ExtResource("3_ot4it")
-
-[node name="Room" type="Node2D" parent="."]
 
 [node name="Background" type="ColorRect" parent="Room"]
 custom_minimum_size = Vector2(800, 300)
@@ -694,60 +690,13 @@ text = "MED BAY
 "
 
 [node name="Label6" type="Label" parent="Room"]
-offset_left = 323.0
-offset_top = 117.0
-offset_right = 415.0
-offset_bottom = 140.0
+offset_left = 310.0
+offset_top = 123.0
+offset_right = 402.0
+offset_bottom = 146.0
 text = "ELECTRIC"
 
 [node name="TerminalNode" type="Node" parent="."]
-
-[node name="Terminal" type="Area2D" parent="TerminalNode"]
-position = Vector2(125, 180)
-script = ExtResource("8_pey6t")
-terminal_ui_scene = ExtResource("9_4cctw")
-
-[node name="ColorRect" type="ColorRect" parent="TerminalNode/Terminal"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/Terminal"]
-shape = SubResource("RectangleShape2D_lu2jc")
-
-[node name="Label" type="Label" parent="TerminalNode/Terminal"]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="Elon Pusk" type="CharacterBody2D" parent="."]
-script = ExtResource("10_sx8v5")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elon Pusk"]
-position = Vector2(151, 191)
-scale = Vector2(0.132162, 0.125362)
-sprite_frames = SubResource("SpriteFrames_u7vfl")
-animation = &"right"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Elon Pusk"]
-position = Vector2(150, 193)
-scale = Vector2(0.132162, 0.125362)
-shape = SubResource("CircleShape2D_ivmby")
-
-[node name="Camera2D" type="Camera2D" parent="Elon Pusk"]
-position = Vector2(151, 192)
-zoom = Vector2(9, 8)
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Elon Pusk"]
 
 [node name="mineTerminal" type="Sprite2D" parent="."]
 position = Vector2(87, 195)
@@ -773,5 +722,25 @@ texture = ExtResource("20_j7hmt")
 position = Vector2(415, 116)
 texture = ExtResource("20_j7hmt")
 
-[connection signal="body_entered" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_entered"]
-[connection signal="body_exited" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_exited"]
+[node name="Elon Pusk" type="CharacterBody2D" parent="."]
+script = ExtResource("10_sx8v5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elon Pusk"]
+position = Vector2(153.751, 193.61)
+scale = Vector2(0.11251, 0.106721)
+sprite_frames = SubResource("SpriteFrames_2ouse")
+animation = &"right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elon Pusk"]
+visible = false
+position = Vector2(151, 190)
+scale = Vector2(0.132162, 0.125362)
+shape = SubResource("RectangleShape2D_05y4h")
+
+[node name="Camera2D" type="Camera2D" parent="Elon Pusk"]
+position = Vector2(151, 192)
+zoom = Vector2(9, 8)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Elon Pusk"]
