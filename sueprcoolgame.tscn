@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://21dd7jmq3fjd"]
+[gd_scene load_steps=85 format=3 uid="uid://21dd7jmq3fjd"]
 
 [ext_resource type="Script" path="res://stats_ui.gd" id="1_raalm"]
 [ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_yrhu8"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://716v3jaqjxxd" path="res://background/abjects/tv.png" id="11_gog4r"]
 [ext_resource type="Texture2D" uid="uid://dsocvnysvwyrv" path="res://Sprites/lionjam2.png" id="11_tmfci"]
 [ext_resource type="Texture2D" uid="uid://b4v2yvdo3r6lq" path="res://Sprites/lionjam3.png" id="14_wqa3i"]
+[ext_resource type="Texture2D" uid="uid://ddlebx2avtpcm" path="res://Sprites/lionjam4.png" id="20_j7hmt"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2ongl"]
 a = Vector2(346, 157)
@@ -747,6 +748,30 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Elon Pusk"]
+
+[node name="mineTerminal" type="Sprite2D" parent="."]
+position = Vector2(87, 195)
+texture = ExtResource("20_j7hmt")
+
+[node name="medTerminal" type="Sprite2D" parent="."]
+position = Vector2(287, 506)
+texture = ExtResource("20_j7hmt")
+
+[node name="bunkTerminal" type="Sprite2D" parent="."]
+position = Vector2(527, 504)
+texture = ExtResource("20_j7hmt")
+
+[node name="commandTerminal" type="Sprite2D" parent="."]
+position = Vector2(751, 323)
+texture = ExtResource("20_j7hmt")
+
+[node name="hangerTerminal" type="Sprite2D" parent="."]
+position = Vector2(481, 104)
+texture = ExtResource("20_j7hmt")
+
+[node name="electricTerminal" type="Sprite2D" parent="."]
+position = Vector2(415, 116)
+texture = ExtResource("20_j7hmt")
 
 [connection signal="body_entered" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_entered"]
 [connection signal="body_exited" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_exited"]
