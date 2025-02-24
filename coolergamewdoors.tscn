@@ -1,30 +1,26 @@
-[gd_scene load_steps=90 format=3 uid="uid://21dd7jmq3fjd"]
+[gd_scene load_steps=87 format=3 uid="uid://bpg4wjq4navo2"]
 
-[ext_resource type="Script" path="res://stats_ui.gd" id="1_raalm"]
-[ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_yrhu8"]
-[ext_resource type="Texture2D" uid="uid://8l48ugbijeda" path="res://background/Plant.png" id="3_ot4it"]
-[ext_resource type="Texture2D" uid="uid://cc54wp8lvaepx" path="res://background/Bunk copy.png" id="4_jkm6h"]
-[ext_resource type="Texture2D" uid="uid://dujyglul3vhfs" path="res://background/abjects/box.png" id="4_u1f8v"]
-[ext_resource type="Texture2D" uid="uid://ci7lqmg75t4ua" path="res://background/Map.png" id="5_dvodn"]
-[ext_resource type="Texture2D" uid="uid://c6m23i7mt4yju" path="res://background/abjects/control.png" id="5_ywuro"]
-[ext_resource type="Texture2D" uid="uid://ccm7bfvwsmfpy" path="res://background/abjects/electric.png" id="6_rahnb"]
-[ext_resource type="Texture2D" uid="uid://bf4vwnqua0tgi" path="res://background/abjects/forklift.png" id="7_h3wtb"]
-[ext_resource type="Texture2D" uid="uid://bcv17gv57ww0b" path="res://background/abjects/med.png" id="8_dl4oe"]
-[ext_resource type="Texture2D" uid="uid://dfe4tp0etl0vw" path="res://background/abjects/shelf.png" id="9_ne7bf"]
-[ext_resource type="Texture2D" uid="uid://b423o05w4t5su" path="res://background/Untitled 02-23-2025 10-08-37.png" id="10_6c2aw"]
-[ext_resource type="Texture2D" uid="uid://cwkjqwyslobx3" path="res://background/abjects/sleeppod.png" id="10_e75l2"]
-[ext_resource type="Script" path="res://elon_pusk.gd" id="10_sx8v5"]
-[ext_resource type="Texture2D" uid="uid://716v3jaqjxxd" path="res://background/abjects/tv.png" id="11_gog4r"]
-[ext_resource type="Texture2D" uid="uid://dsocvnysvwyrv" path="res://Sprites/lionjam2.png" id="11_tmfci"]
-[ext_resource type="Texture2D" uid="uid://b4v2yvdo3r6lq" path="res://Sprites/lionjam3.png" id="14_wqa3i"]
-[ext_resource type="Script" path="res://static_body_2d_6.gd" id="15_xcbt5"]
-[ext_resource type="Texture2D" uid="uid://cww6gay8lcira" path="res://Sprites/lionjam5.png" id="16_lxxbq"]
-[ext_resource type="Script" path="res://static_body_2d_5.gd" id="17_jv2be"]
-[ext_resource type="Script" path="res://static_body_2d_4.gd" id="18_bw7uk"]
-[ext_resource type="Script" path="res://static_body_2d_3.gd" id="19_8r2tj"]
-[ext_resource type="Texture2D" uid="uid://ddlebx2avtpcm" path="res://Sprites/lionjam4.png" id="20_j7hmt"]
-[ext_resource type="Script" path="res://static_body_2d.gd" id="20_lve7b"]
-[ext_resource type="Script" path="res://static_body_2d_2.gd" id="21_vxpgb"]
+[ext_resource type="Script" path="res://stats_ui.gd" id="1_dm4c8"]
+[ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_w5f2g"]
+[ext_resource type="Texture2D" uid="uid://dllo67g7tjkg7" path="res://background/Bunk.png" id="3_uss8r"]
+[ext_resource type="Texture2D" uid="uid://dytjyjfp8cs5q" path="res://background/command.png" id="4_b3u6d"]
+[ext_resource type="Texture2D" uid="uid://dgspbip4p2uk6" path="res://background/Kitchen.png" id="5_nl15m"]
+[ext_resource type="Texture2D" uid="uid://kp6h0673ovp5" path="res://background/Lab.png" id="6_hhog2"]
+[ext_resource type="Texture2D" uid="uid://ci7lqmg75t4ua" path="res://background/Map.png" id="7_x3pcb"]
+[ext_resource type="Texture2D" uid="uid://cp10mmfsmagt4" path="res://background/Med.png" id="8_ovc4f"]
+[ext_resource type="Texture2D" uid="uid://d1pm8iq2bqclo" path="res://background/Mine.png" id="9_r5y30"]
+[ext_resource type="Script" path="res://static_body_2d.gd" id="10_734ns"]
+[ext_resource type="Script" path="res://terminal.gd" id="10_a68sw"]
+[ext_resource type="Texture2D" uid="uid://cww6gay8lcira" path="res://Sprites/lionjam5.png" id="11_2dkjr"]
+[ext_resource type="PackedScene" uid="uid://chdvhwutlyvfm" path="res://terminal_root.tscn" id="11_snvlk"]
+[ext_resource type="Script" path="res://elon_pusk.gd" id="12_gt27u"]
+[ext_resource type="Texture2D" uid="uid://dsocvnysvwyrv" path="res://Sprites/lionjam2.png" id="13_ooyqr"]
+[ext_resource type="Texture2D" uid="uid://b4v2yvdo3r6lq" path="res://Sprites/lionjam3.png" id="14_dokwv"]
+[ext_resource type="Script" path="res://static_body_2d_2.gd" id="14_px26u"]
+[ext_resource type="Script" path="res://static_body_2d_3.gd" id="15_pvsqy"]
+[ext_resource type="Script" path="res://static_body_2d_4.gd" id="16_arf1i"]
+[ext_resource type="Script" path="res://static_body_2d_5.gd" id="17_qqwbm"]
+[ext_resource type="Script" path="res://static_body_2d_6.gd" id="18_iqvk7"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2ongl"]
 a = Vector2(346, 157)
@@ -230,50 +226,52 @@ b = Vector2(198, 228)
 a = Vector2(641, 259)
 b = Vector2(647, 259)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkh34"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu2jc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klcv7"]
 size = Vector2(7.2072, 32.4324)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8cc0"]
-atlas = ExtResource("11_tmfci")
+atlas = ExtResource("13_ooyqr")
 region = Rect2(506, 170, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6jya"]
-atlas = ExtResource("11_tmfci")
+atlas = ExtResource("13_ooyqr")
 region = Rect2(506, 730, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6jmi"]
-atlas = ExtResource("11_tmfci")
+atlas = ExtResource("13_ooyqr")
 region = Rect2(506, 450, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kyd1c"]
-atlas = ExtResource("11_tmfci")
+atlas = ExtResource("13_ooyqr")
 region = Rect2(226, 170, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlw7y"]
-atlas = ExtResource("11_tmfci")
+atlas = ExtResource("13_ooyqr")
 region = Rect2(226, 450, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4e5ip"]
-atlas = ExtResource("11_tmfci")
+atlas = ExtResource("13_ooyqr")
 region = Rect2(226, 730, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1glwa"]
-atlas = ExtResource("14_wqa3i")
+atlas = ExtResource("14_dokwv")
 region = Rect2(226, 170, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75m5v"]
-atlas = ExtResource("14_wqa3i")
+atlas = ExtResource("14_dokwv")
 region = Rect2(226, 450, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gab4v"]
-atlas = ExtResource("11_tmfci")
+atlas = ExtResource("13_ooyqr")
 region = Rect2(786, 170, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8m4w"]
-atlas = ExtResource("11_tmfci")
+atlas = ExtResource("13_ooyqr")
 region = Rect2(786, 450, 280, 280)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2ouse"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7vfl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -326,8 +324,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_05y4h"]
-size = Vector2(226.994, 223.353)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qr1q"]
+size = Vector2(198.62, 199.422)
 
 [node name="Main" type="Node2D"]
 
@@ -341,7 +339,7 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
-script = ExtResource("1_raalm")
+script = ExtResource("1_dm4c8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/StatsUI"]
 layout_mode = 1
@@ -366,90 +364,6 @@ layout_mode = 2
 
 [node name="Room" type="Node2D" parent="."]
 
-[node name="objects" type="Node" parent="Room"]
-
-[node name="drill" type="Sprite2D" parent="Room/objects"]
-position = Vector2(210, 109)
-scale = Vector2(4.91, 4.1)
-texture = ExtResource("10_6c2aw")
-
-[node name="Plant" type="Sprite2D" parent="Room/objects"]
-position = Vector2(200, 280)
-scale = Vector2(2.95, 2.56)
-texture = ExtResource("3_ot4it")
-
-[node name="Box" type="Sprite2D" parent="Room/objects"]
-position = Vector2(250, 60)
-scale = Vector2(1.46, 1.32)
-texture = ExtResource("4_u1f8v")
-
-[node name="Control" type="Sprite2D" parent="Room/objects"]
-position = Vector2(746, 290)
-scale = Vector2(2.22, 4)
-texture = ExtResource("5_ywuro")
-
-[node name="Electric" type="Sprite2D" parent="Room/objects"]
-position = Vector2(400, 70)
-scale = Vector2(1.46, 1.7)
-texture = ExtResource("6_rahnb")
-
-[node name="Forklift" type="Sprite2D" parent="Room/objects"]
-position = Vector2(560, 110)
-scale = Vector2(1.9, 2.66)
-texture = ExtResource("7_h3wtb")
-
-[node name="Med" type="Sprite2D" parent="Room/objects"]
-position = Vector2(200, 500)
-scale = Vector2(2.18, 2.56)
-texture = ExtResource("8_dl4oe")
-
-[node name="Shelf" type="Sprite2D" parent="Room/objects"]
-position = Vector2(550, 56)
-scale = Vector2(2.43, 2.32)
-texture = ExtResource("9_ne7bf")
-
-[node name="Sleeppod" type="Sprite2D" parent="Room/objects"]
-position = Vector2(620, 450)
-scale = Vector2(1.42, 1.7)
-texture = ExtResource("10_e75l2")
-
-[node name="Tv" type="Sprite2D" parent="Room/objects"]
-position = Vector2(700, 230)
-scale = Vector2(2.98, 1.92)
-texture = ExtResource("11_gog4r")
-
-[node name="Shelf2" type="Sprite2D" parent="Room/objects"]
-position = Vector2(480, 56)
-scale = Vector2(2.43, 2.32)
-texture = ExtResource("9_ne7bf")
-
-[node name="Electric2" type="Sprite2D" parent="Room/objects"]
-position = Vector2(360, 70)
-scale = Vector2(1.46, 1.7)
-texture = ExtResource("6_rahnb")
-
-[node name="Electric3" type="Sprite2D" parent="Room/objects"]
-position = Vector2(320, 70)
-scale = Vector2(1.46, 1.7)
-texture = ExtResource("6_rahnb")
-
-[node name="Box2" type="Sprite2D" parent="Room/objects"]
-position = Vector2(200, 40)
-scale = Vector2(1.46, 1.32)
-texture = ExtResource("4_u1f8v")
-
-[node name="Plant2" type="Sprite2D" parent="Room/objects"]
-position = Vector2(60, 280)
-rotation = -2.1869
-scale = Vector2(2.62, 2.274)
-texture = ExtResource("3_ot4it")
-
-[node name="Plant3" type="Sprite2D" parent="Room/objects"]
-position = Vector2(150, 310)
-rotation = 1.5708
-scale = Vector2(2.95, 2.56)
-texture = ExtResource("3_ot4it")
-
 [node name="Background" type="ColorRect" parent="Room"]
 custom_minimum_size = Vector2(800, 300)
 offset_right = 800.0
@@ -458,48 +372,41 @@ color = Color(0.544974, 0.544974, 0.544974, 1)
 
 [node name="Greenhouse" type="Sprite2D" parent="Room"]
 position = Vector2(420, 283)
-texture = ExtResource("2_yrhu8")
+texture = ExtResource("2_w5f2g")
+
+[node name="Bunk" type="Sprite2D" parent="Room"]
+position = Vector2(366, 86.0002)
+rotation = 3.14159
+texture = ExtResource("3_uss8r")
+
+[node name="Command" type="Sprite2D" parent="Room"]
+position = Vector2(717, 281)
+rotation = -1.5708
+texture = ExtResource("4_b3u6d")
+
+[node name="Kitchen" type="Sprite2D" parent="Room"]
+position = Vector2(523, 86.0002)
+rotation = 3.14159
+texture = ExtResource("5_nl15m")
+
+[node name="Lab" type="Sprite2D" parent="Room"]
+position = Vector2(242, 480)
+texture = ExtResource("6_hhog2")
 
 [node name="Map" type="Sprite2D" parent="Room"]
 visible = false
 position = Vector2(586.2, 312)
 scale = Vector2(0.104062, 0.09375)
-texture = ExtResource("5_dvodn")
+texture = ExtResource("7_x3pcb")
 
-[node name="BunkCopy" type="Sprite2D" parent="Room"]
-position = Vector2(123, 247)
-scale = Vector2(0.90625, 1.09722)
-texture = ExtResource("4_jkm6h")
+[node name="Med" type="Sprite2D" parent="Room"]
+position = Vector2(569, 480)
+texture = ExtResource("8_ovc4f")
 
-[node name="BunkCopy2" type="Sprite2D" parent="Room"]
-position = Vector2(242, 480)
-rotation = -1.5708
-scale = Vector2(0.90625, 1.11716)
-texture = ExtResource("4_jkm6h")
-
-[node name="BunkCopy3" type="Sprite2D" parent="Room"]
-position = Vector2(524, 86)
+[node name="Mine" type="Sprite2D" parent="Room"]
+position = Vector2(121, 247)
 rotation = 1.5708
-scale = Vector2(0.90625, 1.11397)
-texture = ExtResource("4_jkm6h")
-
-[node name="BunkCopy4" type="Sprite2D" parent="Room"]
-position = Vector2(717, 280.5)
-rotation = 3.14159
-scale = Vector2(0.90625, 1.11806)
-texture = ExtResource("4_jkm6h")
-
-[node name="BunkCopy5" type="Sprite2D" parent="Room"]
-position = Vector2(366, 86)
-rotation = 1.5708
-scale = Vector2(0.90625, 1.09722)
-texture = ExtResource("4_jkm6h")
-
-[node name="BunkCopy6" type="Sprite2D" parent="Room"]
-position = Vector2(568.115, 480)
-rotation = 4.71239
-scale = Vector2(0.90625, 1.1127)
-texture = ExtResource("4_jkm6h")
+texture = ExtResource("9_r5y30")
 
 [node name="bottom" type="StaticBody2D" parent="Room"]
 
@@ -662,176 +569,136 @@ shape = SubResource("SegmentShape2D_qw4r6")
 [node name="top12" type="CollisionShape2D" parent="Room/top" groups=["top_walls"]]
 shape = SubResource("SegmentShape2D_01dja")
 
-[node name="bunk" type="Label" parent="Room"]
-offset_left = 540.0
-offset_top = 420.0
-offset_right = 621.0
-offset_bottom = 465.0
-text = "BUNK"
-
-[node name="hander" type="Label" parent="Room"]
-offset_left = 486.0
-offset_top = 128.0
-offset_right = 553.0
-offset_bottom = 151.0
-text = "HANGER"
-
-[node name="mine" type="Label" parent="Room"]
-offset_left = 137.0
-offset_top = 236.0
-offset_right = 179.0
-offset_bottom = 259.0
-text = "MINE"
-
-[node name="command" type="Label" parent="Room"]
-offset_left = 661.0
-offset_top = 268.0
-offset_right = 749.0
-offset_bottom = 291.0
-text = "COMMAND
-"
-
-[node name="medbay" type="Label" parent="Room"]
-offset_left = 209.0
-offset_top = 420.0
-offset_right = 280.0
-offset_bottom = 443.0
-text = "MED BAY
-"
-
-[node name="Label6" type="Label" parent="Room"]
-offset_left = 310.0
-offset_top = 123.0
-offset_right = 402.0
-offset_bottom = 146.0
-text = "ELECTRIC"
-
-[node name="doors" type="Node" parent="."]
-
-[node name="bunkDoor" type="StaticBody2D" parent="doors"]
-script = ExtResource("15_xcbt5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/bunkDoor"]
-position = Vector2(570.061, 407.696)
+[node name="Sprite2D" type="Sprite2D" parent="Room"]
+position = Vector2(194.321, 247.919)
 rotation = 1.5708
-scale = Vector2(1.11, 1.11)
-shape = SubResource("RectangleShape2D_kkh34")
-
-[node name="Sprite2D" type="Sprite2D" parent="doors/bunkDoor"]
-position = Vector2(570.061, 407.77)
-scale = Vector2(-0.0451534, -0.0127381)
-texture = ExtResource("16_lxxbq")
-
-[node name="medDoor" type="StaticBody2D" parent="doors"]
-script = ExtResource("17_jv2be")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/medDoor"]
-position = Vector2(243.061, 407.696)
-rotation = 1.5708
-scale = Vector2(1.11, 1.11)
-shape = SubResource("RectangleShape2D_kkh34")
-
-[node name="Sprite2D" type="Sprite2D" parent="doors/medDoor"]
-position = Vector2(243.061, 407.77)
-scale = Vector2(-0.0451534, -0.0127381)
-texture = ExtResource("16_lxxbq")
-
-[node name="electricDoor" type="StaticBody2D" parent="doors"]
-script = ExtResource("18_bw7uk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/electricDoor"]
-position = Vector2(365.061, 156.696)
-rotation = 1.5708
-scale = Vector2(1.11, 1.11)
-shape = SubResource("RectangleShape2D_kkh34")
-
-[node name="Sprite2D" type="Sprite2D" parent="doors/electricDoor"]
-position = Vector2(365.061, 156.77)
-scale = Vector2(-0.0451534, -0.0127381)
-texture = ExtResource("16_lxxbq")
-
-[node name="hangerDoor" type="StaticBody2D" parent="doors"]
-script = ExtResource("19_8r2tj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/hangerDoor"]
-position = Vector2(522.061, 156.696)
-rotation = 1.5708
-scale = Vector2(1.11, 1.11)
-shape = SubResource("RectangleShape2D_kkh34")
-
-[node name="Sprite2D" type="Sprite2D" parent="doors/hangerDoor"]
-position = Vector2(522.061, 156.77)
-scale = Vector2(-0.0451534, -0.0127381)
-texture = ExtResource("16_lxxbq")
-
-[node name="minedDoor" type="StaticBody2D" parent="doors"]
-script = ExtResource("20_lve7b")
-
-[node name="Sprite2D" type="Sprite2D" parent="doors/minedDoor"]
-position = Vector2(195, 248.074)
-rotation = -1.5708
-scale = Vector2(0.0451534, 0.0127381)
-texture = ExtResource("16_lxxbq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/minedDoor"]
-position = Vector2(195, 248)
-scale = Vector2(1.11, 1.11)
-shape = SubResource("RectangleShape2D_kkh34")
-
-[node name="commandDoor" type="StaticBody2D" parent="doors"]
-script = ExtResource("21_vxpgb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doors/commandDoor"]
-position = Vector2(644.771, 278.987)
-scale = Vector2(1.11, 1.11)
-shape = SubResource("RectangleShape2D_kkh34")
-
-[node name="Sprite2D" type="Sprite2D" parent="doors/commandDoor"]
-position = Vector2(644.771, 279.061)
-rotation = 1.5708
-scale = Vector2(-0.0451534, -0.0127381)
-texture = ExtResource("16_lxxbq")
+scale = Vector2(0.0452031, 0.0117546)
+texture = ExtResource("11_2dkjr")
 
 [node name="TerminalNode" type="Node" parent="."]
 
-[node name="mineTerminal" type="Sprite2D" parent="TerminalNode"]
-position = Vector2(87, 195)
-texture = ExtResource("20_j7hmt")
+[node name="Terminal" type="Area2D" parent="TerminalNode"]
+position = Vector2(125, 180)
+script = ExtResource("10_a68sw")
+terminal_ui_scene = ExtResource("11_snvlk")
 
-[node name="medTerminal" type="Sprite2D" parent="TerminalNode"]
-position = Vector2(287, 506)
-texture = ExtResource("20_j7hmt")
+[node name="ColorRect" type="ColorRect" parent="TerminalNode/Terminal"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="bunkTerminal" type="Sprite2D" parent="TerminalNode"]
-position = Vector2(527, 504)
-texture = ExtResource("20_j7hmt")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TerminalNode/Terminal"]
+shape = SubResource("RectangleShape2D_lu2jc")
 
-[node name="commandTerminal" type="Sprite2D" parent="TerminalNode"]
-position = Vector2(751, 323)
-texture = ExtResource("20_j7hmt")
+[node name="Label" type="Label" parent="TerminalNode/Terminal"]
+offset_right = 40.0
+offset_bottom = 23.0
 
-[node name="hangerTerminal" type="Sprite2D" parent="TerminalNode"]
-position = Vector2(481, 104)
-texture = ExtResource("20_j7hmt")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("10_734ns")
 
-[node name="electricTerminal" type="Sprite2D" parent="TerminalNode"]
-position = Vector2(415, 116)
-texture = ExtResource("20_j7hmt")
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(195, 248.074)
+rotation = -1.5708
+scale = Vector2(0.0451534, 0.0127381)
+texture = ExtResource("11_2dkjr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(195, 248)
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_klcv7")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+script = ExtResource("14_px26u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(644.771, 278.987)
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_klcv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(644.771, 279.061)
+rotation = 1.5708
+scale = Vector2(-0.0451534, -0.0127381)
+texture = ExtResource("11_2dkjr")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+script = ExtResource("15_pvsqy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(522.061, 156.696)
+rotation = 1.5708
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_klcv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(522.061, 156.77)
+scale = Vector2(-0.0451534, -0.0127381)
+texture = ExtResource("11_2dkjr")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+script = ExtResource("16_arf1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(365.061, 156.696)
+rotation = 1.5708
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_klcv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(365.061, 156.77)
+scale = Vector2(-0.0451534, -0.0127381)
+texture = ExtResource("11_2dkjr")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+script = ExtResource("17_qqwbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(243.061, 407.696)
+rotation = 1.5708
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_klcv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5"]
+position = Vector2(243.061, 407.77)
+scale = Vector2(-0.0451534, -0.0127381)
+texture = ExtResource("11_2dkjr")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+script = ExtResource("18_iqvk7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(570.061, 407.696)
+rotation = 1.5708
+scale = Vector2(1.11, 1.11)
+shape = SubResource("RectangleShape2D_klcv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D6"]
+position = Vector2(570.061, 407.77)
+scale = Vector2(-0.0451534, -0.0127381)
+texture = ExtResource("11_2dkjr")
 
 [node name="Elon Pusk" type="CharacterBody2D" parent="."]
-script = ExtResource("10_sx8v5")
+script = ExtResource("12_gt27u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elon Pusk"]
-position = Vector2(153.751, 193.61)
-scale = Vector2(0.11251, 0.106721)
-sprite_frames = SubResource("SpriteFrames_2ouse")
+position = Vector2(153.751, 193.275)
+scale = Vector2(0.11251, 0.10911)
+sprite_frames = SubResource("SpriteFrames_u7vfl")
 animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elon Pusk"]
-visible = false
-position = Vector2(151, 190)
+position = Vector2(154.125, 193)
 scale = Vector2(0.132162, 0.125362)
-shape = SubResource("RectangleShape2D_05y4h")
+shape = SubResource("RectangleShape2D_5qr1q")
 
 [node name="Camera2D" type="Camera2D" parent="Elon Pusk"]
 position = Vector2(151, 192)
@@ -840,3 +707,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Elon Pusk"]
+
+[connection signal="body_entered" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_entered"]
+[connection signal="body_exited" from="TerminalNode/Terminal" to="TerminalNode/Terminal" method="_on_body_exited"]

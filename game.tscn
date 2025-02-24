@@ -312,8 +312,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ta1i0"]
-radius = 113.777
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dx2e1"]
+size = Vector2(226.994, 223.353)
 
 [node name="Main" type="Node2D"]
 
@@ -552,15 +552,16 @@ shape = SubResource("SegmentShape2D_28dyt")
 script = ExtResource("10_ncqvn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elon Pusk"]
-position = Vector2(151, 191)
-scale = Vector2(0.132162, 0.125362)
+position = Vector2(153.751, 193.61)
+scale = Vector2(0.11251, 0.106721)
 sprite_frames = SubResource("SpriteFrames_lfddp")
 animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elon Pusk"]
-position = Vector2(150, 193)
+visible = false
+position = Vector2(151, 190)
 scale = Vector2(0.132162, 0.125362)
-shape = SubResource("CircleShape2D_ta1i0")
+shape = SubResource("RectangleShape2D_dx2e1")
 
 [node name="Camera2D" type="Camera2D" parent="Elon Pusk"]
 position = Vector2(151, 192)
