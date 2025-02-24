@@ -1,16 +1,17 @@
-[gd_scene load_steps=74 format=3 uid="uid://d05wrrfpl0b5g"]
+[gd_scene load_steps=77 format=3 uid="uid://cu6obkd1lhdhp"]
 
-[ext_resource type="Texture2D" uid="uid://dllo67g7tjkg7" path="res://background/Bunk.png" id="1_wt5oo"]
-[ext_resource type="Texture2D" uid="uid://dytjyjfp8cs5q" path="res://background/command.png" id="2_21qb2"]
-[ext_resource type="Texture2D" uid="uid://dgspbip4p2uk6" path="res://background/Kitchen.png" id="3_gjju7"]
-[ext_resource type="Texture2D" uid="uid://kp6h0673ovp5" path="res://background/Lab.png" id="4_e05uo"]
-[ext_resource type="Texture2D" uid="uid://ci7lqmg75t4ua" path="res://background/Map.png" id="5_x1x5n"]
-[ext_resource type="Texture2D" uid="uid://cp10mmfsmagt4" path="res://background/Med.png" id="6_yoxsl"]
-[ext_resource type="Texture2D" uid="uid://d1pm8iq2bqclo" path="res://background/Mine.png" id="7_u3voh"]
-[ext_resource type="Script" path="res://terminal.gd" id="8_kww22"]
-[ext_resource type="Texture2D" uid="uid://cn8oyljvaio8d" path="res://background/Greenhouse.png" id="9_tookj"]
-[ext_resource type="Texture2D" uid="uid://dsocvnysvwyrv" path="res://Sprites/lionjam2.png" id="12_f4k5x"]
-[ext_resource type="Script" path="res://elon_pusk.gd" id="12_jtxvw"]
+[ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="1_y0krq"]
+[ext_resource type="Texture2D" uid="uid://dllo67g7tjkg7" path="res://background/Bunk.png" id="2_bukl6"]
+[ext_resource type="Texture2D" uid="uid://dytjyjfp8cs5q" path="res://background/command.png" id="3_hy02l"]
+[ext_resource type="Texture2D" uid="uid://dgspbip4p2uk6" path="res://background/Kitchen.png" id="4_cfwva"]
+[ext_resource type="Texture2D" uid="uid://kp6h0673ovp5" path="res://background/Lab.png" id="5_vjx6r"]
+[ext_resource type="Texture2D" uid="uid://ci7lqmg75t4ua" path="res://background/Map.png" id="6_csimo"]
+[ext_resource type="Texture2D" uid="uid://cp10mmfsmagt4" path="res://background/Med.png" id="7_whwxo"]
+[ext_resource type="Texture2D" uid="uid://d1pm8iq2bqclo" path="res://background/Mine.png" id="8_hto6x"]
+[ext_resource type="Script" path="res://terminal.gd" id="9_qyjdf"]
+[ext_resource type="Script" path="res://elon_pusk.gd" id="10_p1ipf"]
+[ext_resource type="Texture2D" uid="uid://dsocvnysvwyrv" path="res://Sprites/lionjam2.png" id="11_eey45"]
+[ext_resource type="Texture2D" uid="uid://b4v2yvdo3r6lq" path="res://Sprites/lionjam3.png" id="12_gakju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu2jc"]
 
@@ -218,46 +219,54 @@ b = Vector2(198, 228)
 a = Vector2(641, 259)
 b = Vector2(647, 259)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p6jya"]
-atlas = ExtResource("12_f4k5x")
-region = Rect2(506, 730, 280, 280)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8cc0"]
-atlas = ExtResource("12_f4k5x")
+atlas = ExtResource("11_eey45")
 region = Rect2(506, 170, 280, 280)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6jya"]
+atlas = ExtResource("11_eey45")
+region = Rect2(506, 730, 280, 280)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6jmi"]
-atlas = ExtResource("12_f4k5x")
+atlas = ExtResource("11_eey45")
 region = Rect2(506, 450, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kyd1c"]
-atlas = ExtResource("12_f4k5x")
+atlas = ExtResource("11_eey45")
 region = Rect2(226, 170, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlw7y"]
-atlas = ExtResource("12_f4k5x")
+atlas = ExtResource("11_eey45")
 region = Rect2(226, 450, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4e5ip"]
-atlas = ExtResource("12_f4k5x")
+atlas = ExtResource("11_eey45")
 region = Rect2(226, 730, 280, 280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g8m4w"]
-atlas = ExtResource("12_f4k5x")
-region = Rect2(786, 450, 280, 280)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1glwa"]
+atlas = ExtResource("12_gakju")
+region = Rect2(226, 170, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75m5v"]
+atlas = ExtResource("12_gakju")
+region = Rect2(226, 450, 280, 280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gab4v"]
-atlas = ExtResource("12_f4k5x")
+atlas = ExtResource("11_eey45")
 region = Rect2(786, 170, 280, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8m4w"]
+atlas = ExtResource("11_eey45")
+region = Rect2(786, 450, 280, 280)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lfddp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p6jya")
+"texture": SubResource("AtlasTexture_n8cc0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n8cc0")
+"texture": SubResource("AtlasTexture_p6jya")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o6jmi")
@@ -280,17 +289,23 @@ animations = [{
 "name": &"forward",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1glwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75m5v")
+}],
 "loop": true,
 "name": &"left",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g8m4w")
+"texture": SubResource("AtlasTexture_gab4v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gab4v")
+"texture": SubResource("AtlasTexture_g8m4w")
 }],
 "loop": true,
 "name": &"right",
@@ -298,7 +313,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ta1i0"]
-radius = 90.7976
+radius = 113.777
 
 [node name="Main" type="Node2D"]
 
@@ -312,45 +327,45 @@ color = Color(0.544974, 0.544974, 0.544974, 1)
 
 [node name="Greenhouse" type="Sprite2D" parent="Room"]
 position = Vector2(420, 283)
-texture = ExtResource("9_tookj")
+texture = ExtResource("1_y0krq")
 
 [node name="Bunk" type="Sprite2D" parent="Room"]
 position = Vector2(366, 86.0002)
 rotation = 3.14159
-texture = ExtResource("1_wt5oo")
+texture = ExtResource("2_bukl6")
 
 [node name="Command" type="Sprite2D" parent="Room"]
 position = Vector2(717, 281)
 rotation = -1.5708
-texture = ExtResource("2_21qb2")
+texture = ExtResource("3_hy02l")
 
 [node name="Kitchen" type="Sprite2D" parent="Room"]
 position = Vector2(523, 86.0002)
 rotation = 3.14159
-texture = ExtResource("3_gjju7")
+texture = ExtResource("4_cfwva")
 
 [node name="Lab" type="Sprite2D" parent="Room"]
 position = Vector2(242, 480)
-texture = ExtResource("4_e05uo")
+texture = ExtResource("5_vjx6r")
 
 [node name="Map" type="Sprite2D" parent="Room"]
 visible = false
 position = Vector2(586.2, 312)
 scale = Vector2(0.104062, 0.09375)
-texture = ExtResource("5_x1x5n")
+texture = ExtResource("6_csimo")
 
 [node name="Med" type="Sprite2D" parent="Room"]
 position = Vector2(569, 480)
-texture = ExtResource("6_yoxsl")
+texture = ExtResource("7_whwxo")
 
 [node name="Mine" type="Sprite2D" parent="Room"]
 position = Vector2(121, 247)
 rotation = 1.5708
-texture = ExtResource("7_u3voh")
+texture = ExtResource("8_hto6x")
 
 [node name="Terminal" type="Area2D" parent="Room"]
 position = Vector2(100, 150)
-script = ExtResource("8_kww22")
+script = ExtResource("9_qyjdf")
 
 [node name="ColorRect" type="ColorRect" parent="Room/Terminal"]
 anchors_preset = 8
@@ -534,16 +549,16 @@ shape = SubResource("SegmentShape2D_6idny")
 shape = SubResource("SegmentShape2D_28dyt")
 
 [node name="Elon Pusk" type="CharacterBody2D" parent="."]
-script = ExtResource("12_jtxvw")
+script = ExtResource("10_p1ipf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elon Pusk"]
 position = Vector2(151, 191)
 scale = Vector2(0.132162, 0.125362)
 sprite_frames = SubResource("SpriteFrames_lfddp")
-animation = &"right"
+animation = &"backward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elon Pusk"]
-position = Vector2(150, 193)
+position = Vector2(152, 192)
 scale = Vector2(0.132162, 0.125362)
 shape = SubResource("CircleShape2D_ta1i0")
 

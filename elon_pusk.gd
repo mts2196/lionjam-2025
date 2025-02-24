@@ -18,7 +18,7 @@ func _physics_process(delta):
 		sprite.play("forward")
 	elif Input.is_action_pressed("move_left"):
 		direction.x -= 1
-		
+		sprite.play("left")
 	elif Input.is_action_pressed("move_right"):
 		direction.x += 1
 		sprite.play("right")
