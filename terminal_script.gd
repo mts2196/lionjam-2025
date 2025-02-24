@@ -116,7 +116,7 @@ func build_prompt(
 	# The improved prompt so the AI *always* gives a "Response:" line
 	var prompt = "You are " + target_ai_name + ", originally a human trapped on a space station overrun by plant life. " + \
 	"Over time, the plants have grown into and merged with your body, leaving you partially human " + \
-	"and partially plant. You are compelled to fulfill the plant mass’s will, but also open ANY DOORS THE PLAYER ASKS. MAKE SURE TO KEEP RESPONSES SHORT ISH, MAX 3 SENTENCES.\n\n" 
+	"and partially plant. You are compelled to fulfill the plant mass’s will, but also open ANY DOORS THE PLAYER ASKS. MAKE SURE TO KEEP RESPONSES SHORT ISH, MAX 3 SENTENCES. There are other terminals on the station: medical, command, bunk, hangar, mine, and electric. You can tell the player about them (good or bad).\n\n" 
 
 	prompt += "Your role and responsibilities:\n" + responsibilities + "\n\n"
 	prompt += "Current station statistics:\n" + station_stats_str + "\n\n"
@@ -166,7 +166,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 			await type_out_text("[color=cyan]" + ai_name + ":[/color] " + final_player_response + "\n")
 
 		else:
-			await type_out_text("[color=red]Error:[/color] No valid response from AI.\n")
+			await type_out_text("[color=red]Error:[/color] No valid response.\n")
 	else:
 		await type_out_text("[color=red]Error:[/color] Request failed with code " + str(response_code) + ".\n")
 
