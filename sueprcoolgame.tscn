@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://21dd7jmq3fjd"]
+[gd_scene load_steps=94 format=3 uid="uid://21dd7jmq3fjd"]
 
 [ext_resource type="Script" path="res://stats_ui.gd" id="1_raalm"]
 [ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_yrhu8"]
@@ -25,6 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://ddlebx2avtpcm" path="res://Sprites/lionjam4.png" id="20_j7hmt"]
 [ext_resource type="Script" path="res://static_body_2d.gd" id="20_lve7b"]
 [ext_resource type="Script" path="res://static_body_2d_2.gd" id="21_vxpgb"]
+[ext_resource type="Script" path="res://area_2d.gd" id="26_8geov"]
+[ext_resource type="AudioStream" uid="uid://bkx07ke7uq07e" path="res://background/music/Leonard Cohen - Hallelujah (Live In London).mp3" id="27_4iy0b"]
+[ext_resource type="Texture2D" uid="uid://dul8f516pos2n" path="res://background/win.png" id="28_alwby"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2ongl"]
 a = Vector2(346, 157)
@@ -328,6 +331,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05y4h"]
 size = Vector2(226.994, 223.353)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elxy3"]
+size = Vector2(149, 138)
 
 [node name="Main" type="Node2D"]
 
@@ -840,3 +846,18 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Elon Pusk"]
+
+[node name="Wining thing" type="Area2D" parent="."]
+script = ExtResource("26_8geov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wining thing"]
+position = Vector2(523, 85)
+shape = SubResource("RectangleShape2D_elxy3")
+
+[node name="winningSound" type="AudioStreamPlayer2D" parent="Wining thing"]
+stream = ExtResource("27_4iy0b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wining thing"]
+position = Vector2(516, 171)
+scale = Vector2(3.16, 2.46)
+texture = ExtResource("28_alwby")
