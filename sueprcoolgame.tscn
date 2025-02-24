@@ -847,8 +847,10 @@ position_smoothing_speed = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Elon Pusk"]
 
-[node name="Wining thing" type="Area2D" parent="."]
+[node name="Wining thing" type="Area2D" parent="." node_paths=PackedStringArray("win_sound", "win_image")]
 script = ExtResource("26_8geov")
+win_sound = NodePath("winningSound")
+win_image = NodePath("win")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wining thing"]
 position = Vector2(523, 85)
@@ -857,7 +859,7 @@ shape = SubResource("RectangleShape2D_elxy3")
 [node name="winningSound" type="AudioStreamPlayer2D" parent="Wining thing"]
 stream = ExtResource("27_4iy0b")
 
-[node name="Sprite2D" type="Sprite2D" parent="Wining thing"]
+[node name="win" type="Sprite2D" parent="Wining thing"]
 position = Vector2(516, 171)
 scale = Vector2(3.16, 2.46)
 texture = ExtResource("28_alwby")

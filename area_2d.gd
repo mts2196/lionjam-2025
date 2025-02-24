@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var win_sound: AudioStreamPlayer
+@export var win_sound: AudioStreamPlayer2D
 @export var win_image: Sprite2D
 
 # Called when the node enters the scene tree for the first time.
