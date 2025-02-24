@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4pf3s678t3y7"]
+[gd_scene load_steps=14 format=3 uid="uid://bafhxbkwcpr8t"]
 
 [ext_resource type="Texture2D" uid="uid://dllo67g7tjkg7" path="res://background/Bunk.png" id="1_7meb1"]
 [ext_resource type="Texture2D" uid="uid://dytjyjfp8cs5q" path="res://background/command.png" id="2_d3cay"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d1pm8iq2bqclo" path="res://background/Mine.png" id="7_pwgf7"]
 [ext_resource type="Script" path="res://terminal.gd" id="8_3k333"]
 [ext_resource type="Script" path="res://player.gd" id="9_fl172"]
-[ext_resource type="Texture2D" uid="uid://bgc7o0craxnpt" path="res://background/Sprites.png" id="10_lfmjg"]
+[ext_resource type="Texture2D" uid="uid://bgc7o0craxnpt" path="res://Sprites/Sprites.png" id="10_lfmjg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu2jc"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://21dd7jmq3fjd"]
+[gd_scene load_steps=99 format=3 uid="uid://21dd7jmq3fjd"]
 
 [ext_resource type="Script" path="res://stats_ui.gd" id="1_raalm"]
 [ext_resource type="Texture2D" uid="uid://buvx0omb8lb3g" path="res://background/Greenhouse.png" id="2_yrhu8"]
@@ -30,6 +30,8 @@
 [ext_resource type="Script" path="res://area_2d.gd" id="26_8geov"]
 [ext_resource type="AudioStream" uid="uid://bkx07ke7uq07e" path="res://background/music/Leonard Cohen - Hallelujah (Live In London).mp3" id="27_4iy0b"]
 [ext_resource type="Texture2D" uid="uid://dul8f516pos2n" path="res://background/win.png" id="28_alwby"]
+[ext_resource type="AudioStream" uid="uid://chb0ny5axrcqs" path="res://lionjamfoot.mp3" id="28_emfrk"]
+[ext_resource type="AudioStream" uid="uid://cyqv5t6o86vv2" path="res://lionjamMusic.mp3" id="29_n1jsb"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2ongl"]
 a = Vector2(346, 157)
@@ -863,6 +865,16 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Elon Pusk"]
+
+[node name="walking" type="AudioStreamPlayer2D" parent="Elon Pusk"]
+stream = ExtResource("28_emfrk")
+volume_db = 5.5
+playback_type = 1
+parameters/looping = false
+
+[node name="backmusic" type="AudioStreamPlayer2D" parent="Elon Pusk"]
+stream = ExtResource("29_n1jsb")
+volume_db = -5.448
 
 [node name="Wining thing" type="Area2D" parent="." node_paths=PackedStringArray("win_sound", "win_image")]
 script = ExtResource("26_8geov")
